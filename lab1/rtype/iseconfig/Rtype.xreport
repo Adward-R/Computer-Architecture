@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2015-03-19T20:32:54</DateModified>
+  <DateModified>2015-03-19T22:58:47</DateModified>
   <ModuleName>Rtype</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
   <SavedFilePath>Z:/Users/Adward/GitHub/Computer-Architecture/lab1/rtype/iseconfig/Rtype.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>Z:/Users/Adward/GitHub/Computer-Architecture/lab1/rtype</ImplementationReportsDirectory>
+  <ImplementationReportsDirectory>Z:/Users/Adward/GitHub/Computer-Architecture/lab1/rtype\</ImplementationReportsDirectory>
   <DateInitialized>2015-03-19T14:12:27</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

@@ -44,3 +44,4 @@
 *.xreport
 *.lso
 *.xml
+.DS_Store
