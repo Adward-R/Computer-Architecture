@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="warning" file="Xst" num="790" delta="new" >&quot;<arg fmt="%s" index="1">display.v</arg>&quot; line <arg fmt="%d" index="2">122</arg>: Index value(s) does not match array range, simulation mismatch.
+</msg>
+
+<msg type="info" file="Xst" num="2679" delta="new" >Register &lt;<arg fmt="%s" index="1">strdata&lt;127&gt;</arg>&gt; in unit &lt;<arg fmt="%s" index="2">ALU</arg>&gt; has a constant value of <arg fmt="%s" index="3">0</arg> during circuit operation. The register is replaced by logic.
+</msg>
+
+<msg type="info" file="Xst" num="2679" delta="new" >Register &lt;<arg fmt="%s" index="1">strdata&lt;126&gt;</arg>&gt; in unit &lt;<arg fmt="%s" index="2">ALU</arg>&gt; has a constant value of <arg fmt="%s" index="3">0</arg> during circuit operation. The register is replaced by logic.
+</msg>
+
+<msg type="info" file="Xst" num="2679" delta="new" >Register &lt;<arg fmt="%s" index="1">strdata&lt;119&gt;</arg>&gt; in unit &lt;<arg fmt="%s" index="2">ALU</arg>&gt; has a constant value of <arg fmt="%s" index="3">0</arg> during circuit operation. The register is replaced by logic.
+</msg>
+
+<msg type="info" file="Xst" num="2679" delta="new" >Register &lt;<arg fmt="%s" index="1">strdata&lt;118&gt;</arg>&gt; in unit &lt;<arg fmt="%s" index="2">ALU</arg>&gt; has a constant value of <arg fmt="%s" index="3">0</arg> during circuit operation. The register is replaced by logic.
+</msg>
+
+<msg type="info" file="Xst" num="2679" delta="new" >Register &lt;<arg fmt="%s" index="1">strdata&lt;111&gt;</arg>&gt; in unit &lt;<arg fmt="%s" index="2">ALU</arg>&gt; has a constant value of <arg fmt="%s" index="3">0</arg> during circuit operation. The register is replaced by logic.
+</msg>
+
+<msg type="info" file="Xst" num="2679" delta="new" >Register &lt;<arg fmt="%s" index="1">strdata&lt;110&gt;</arg>&gt; in unit &lt;<arg fmt="%s" index="2">ALU</arg>&gt; has a constant value of <arg fmt="%s" index="3">0</arg> during circuit operation. The register is replaced by logic.
+</msg>
+
+<msg type="info" file="Xst" num="2679" delta="new" >Register &lt;<arg fmt="%s" index="1">strdata&lt;103&gt;</arg>&gt; in unit &lt;<arg fmt="%s" index="2">ALU</arg>&gt; has a constant value of <arg fmt="%s" index="3">0</arg> during circuit operation. The register is replaced by logic.
+</msg>
+
+<msg type="info" file="Xst" num="2679" delta="new" >Register &lt;<arg fmt="%s" index="1">strdata&lt;102&gt;</arg>&gt; in unit &lt;<arg fmt="%s" index="2">ALU</arg>&gt; has a constant value of <arg fmt="%s" index="3">0</arg> during circuit operation. The register is replaced by logic.
+</msg>
+
+<msg type="info" file="Xst" num="2679" delta="new" >Register &lt;<arg fmt="%s" index="1">rwlcd</arg>&gt; in unit &lt;<arg fmt="%s" index="2">lcd</arg>&gt; has a constant value of <arg fmt="%s" index="3">0</arg> during circuit operation. The register is replaced by logic.
+</msg>
+
+<msg type="info" file="Xst" num="2679" delta="new" >Register &lt;<arg fmt="%s" index="1">homelcd</arg>&gt; in unit &lt;<arg fmt="%s" index="2">genlcd</arg>&gt; has a constant value of <arg fmt="%s" index="3">0</arg> during circuit operation. The register is replaced by logic.
+</msg>
+
+<msg type="warning" file="Xst" num="737" delta="new" >Found <arg fmt="%d" index="1">32</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">o_alu</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+</msg>
+
+<msg type="info" file="Xst" num="2371" delta="new" >HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+</msg>
+
+<msg type="info" file="Xst" num="2117" delta="new" >HDL ADVISOR - Mux Selector &lt;<arg fmt="%s" index="1">$old_lcdstate_2</arg>&gt; of Case statement line <arg fmt="%s" index="2">61</arg> was re-encoded using one-hot encoding. The case statement will be optimized (default statement optimization), but this optimization may lead to design initialization problems. To ensure the design works safely, you can:
+	- add an &apos;<arg fmt="%s" index="3">INIT</arg>&apos; attribute on signal &lt;<arg fmt="%s" index="4">$old_lcdstate_2</arg>&gt; (optimization is then done without any risk)
+	- use the attribute &apos;<arg fmt="%s" index="5">signal_encoding</arg> <arg fmt="%s" index="6">user</arg>&apos; to avoid onehot optimization
+	- use the attribute &apos;<arg fmt="%s" index="7">safe_implementation</arg> <arg fmt="%s" index="8">yes</arg>&apos; to force XST to perform a safe (but less efficient) optimization
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">lcdhome</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="info" file="Xst" num="2117" delta="new" >HDL ADVISOR - Mux Selector &lt;<arg fmt="%s" index="1">gstate</arg>&gt; of Case statement line <arg fmt="%s" index="2">58</arg> was re-encoded using one-hot encoding. The case statement will be optimized (default statement optimization), but this optimization may lead to design initialization problems. To ensure the design works safely, you can:
+	- add an &apos;<arg fmt="%s" index="3">INIT</arg>&apos; attribute on signal &lt;<arg fmt="%s" index="4">gstate</arg>&gt; (optimization is then done without any risk)
+	- use the attribute &apos;<arg fmt="%s" index="5">signal_encoding</arg> <arg fmt="%s" index="6">user</arg>&apos; to avoid onehot optimization
+	- use the attribute &apos;<arg fmt="%s" index="7">safe_implementation</arg> <arg fmt="%s" index="8">yes</arg>&apos; to force XST to perform a safe (but less efficient) optimization
+</msg>
+
+<msg type="warning" file="Xst" num="653" delta="new" >Signal &lt;<arg fmt="%s" index="1">strdata&lt;255:128&gt;</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</arg>.
+</msg>
+
+<msg type="warning" file="Xst" num="653" delta="new" >Signal &lt;<arg fmt="%s" index="1">strdata&lt;95:0&gt;</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">000000000000000000000000001100010011000100110001001100010010000000110010001100100011001000110010</arg>.
+</msg>
+
+<msg type="warning" file="Xst" num="653" delta="new" >Signal &lt;<arg fmt="%s" index="1">i_s</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">00000000000000000010001000100010</arg>.
+</msg>
+
+<msg type="warning" file="Xst" num="653" delta="new" >Signal &lt;<arg fmt="%s" index="1">i_r</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">00000000000000000001000100010001</arg>.
+</msg>
+
+<msg type="info" file="Xst" num="1767" delta="new" >HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">lcdstate_40</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">M0</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">lcdstate_40</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">lcd</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="1426" delta="new" >The value init of the FF/Latch <arg fmt="%s" index="1">strdata_125</arg> hinder the constant cleaning in the block <arg fmt="%s" index="2">ALU</arg>.
+You should achieve better results by setting this init to <arg fmt="%i" index="3">1</arg>.
+</msg>
+
+<msg type="warning" file="Xst" num="1426" delta="new" >The value init of the FF/Latch <arg fmt="%s" index="1">strdata_124</arg> hinder the constant cleaning in the block <arg fmt="%s" index="2">ALU</arg>.
+You should achieve better results by setting this init to <arg fmt="%i" index="3">1</arg>.
+</msg>
+
+<msg type="warning" file="Xst" num="1426" delta="new" >The value init of the FF/Latch <arg fmt="%s" index="1">strdata_117</arg> hinder the constant cleaning in the block <arg fmt="%s" index="2">ALU</arg>.
+You should achieve better results by setting this init to <arg fmt="%i" index="3">1</arg>.
+</msg>
+
+<msg type="warning" file="Xst" num="1426" delta="new" >The value init of the FF/Latch <arg fmt="%s" index="1">strdata_116</arg> hinder the constant cleaning in the block <arg fmt="%s" index="2">ALU</arg>.
+You should achieve better results by setting this init to <arg fmt="%i" index="3">1</arg>.
+</msg>
+
+<msg type="warning" file="Xst" num="1426" delta="new" >The value init of the FF/Latch <arg fmt="%s" index="1">strdata_109</arg> hinder the constant cleaning in the block <arg fmt="%s" index="2">ALU</arg>.
+You should achieve better results by setting this init to <arg fmt="%i" index="3">1</arg>.
+</msg>
+
+<msg type="warning" file="Xst" num="1426" delta="new" >The value init of the FF/Latch <arg fmt="%s" index="1">strdata_108</arg> hinder the constant cleaning in the block <arg fmt="%s" index="2">ALU</arg>.
+You should achieve better results by setting this init to <arg fmt="%i" index="3">1</arg>.
+</msg>
+
+<msg type="warning" file="Xst" num="1426" delta="new" >The value init of the FF/Latch <arg fmt="%s" index="1">strdata_101</arg> hinder the constant cleaning in the block <arg fmt="%s" index="2">ALU</arg>.
+You should achieve better results by setting this init to <arg fmt="%i" index="3">1</arg>.
+</msg>
+
+<msg type="warning" file="Xst" num="1426" delta="new" >The value init of the FF/Latch <arg fmt="%s" index="1">strdata_100</arg> hinder the constant cleaning in the block <arg fmt="%s" index="2">ALU</arg>.
+You should achieve better results by setting this init to <arg fmt="%i" index="3">1</arg>.
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">o_alu_4</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">single_alu</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">2 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;o_alu_8&gt; &lt;o_alu_12&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">o_alu_2</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">single_alu</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">23 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;o_alu_3&gt; &lt;o_alu_6&gt; &lt;o_alu_7&gt; &lt;o_alu_10&gt; &lt;o_alu_11&gt; &lt;o_alu_14&gt; &lt;o_alu_15&gt; &lt;o_alu_16&gt; &lt;o_alu_17&gt; &lt;o_alu_18&gt; &lt;o_alu_19&gt; &lt;o_alu_20&gt; &lt;o_alu_21&gt; &lt;o_alu_22&gt; &lt;o_alu_23&gt; &lt;o_alu_24&gt; &lt;o_alu_25&gt; &lt;o_alu_26&gt; &lt;o_alu_27&gt; &lt;o_alu_28&gt; &lt;o_alu_29&gt; &lt;o_alu_30&gt; &lt;o_alu_31&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">o_alu_old_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">ALU</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;strdata_96&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">o_alu_old_1</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">ALU</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;strdata_97&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">strdata_125</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">ALU</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">7 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;strdata_124&gt; &lt;strdata_117&gt; &lt;strdata_116&gt; &lt;strdata_109&gt; &lt;strdata_108&gt; &lt;strdata_101&gt; &lt;strdata_100&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">o_alu_old_2</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">ALU</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;strdata_98&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">o_alu_old_3</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">ALU</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;strdata_99&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">o_alu_old_4</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">ALU</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;strdata_104&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">o_alu_old_5</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">ALU</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;strdata_105&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">o_alu_old_6</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">ALU</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;strdata_106&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">o_alu_old_7</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">ALU</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;strdata_107&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">o_alu_old_8</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">ALU</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;strdata_112&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">o_alu_old_9</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">ALU</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;strdata_113&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">o_alu_old_10</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">ALU</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;strdata_114&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">o_alu_old_11</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">ALU</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;strdata_115&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">o_alu_old_12</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">ALU</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;strdata_120&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">o_alu_old_13</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">ALU</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;strdata_121&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">o_alu_old_14</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">ALU</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;strdata_122&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">o_alu_old_15</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">ALU</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;strdata_123&gt; </arg>
+</msg>
+
+<msg type="warning" file="Xst" num="1710" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">i_0</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">1</arg> in block &lt;<arg fmt="%s" index="3">genlcd</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">i_1</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">1</arg> in block &lt;<arg fmt="%s" index="3">genlcd</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">i_2</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">1</arg> in block &lt;<arg fmt="%s" index="3">genlcd</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">lcddatin_7</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">genlcd</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">o_alu_1</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">single_alu</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">3 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;o_alu_5&gt; &lt;o_alu_9&gt; &lt;o_alu_13&gt; </arg>
+</msg>
+
+<msg type="warning" file="Xst" num="1710" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">M0/M0/lcdhome</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ALU</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">o_alu_old_1</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">ALU</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">3 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;o_alu_old_5&gt; &lt;o_alu_old_9&gt; &lt;o_alu_old_13&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">o_alu_old_2</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">ALU</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">23 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;o_alu_old_3&gt; &lt;o_alu_old_6&gt; &lt;o_alu_old_7&gt; &lt;o_alu_old_10&gt; &lt;o_alu_old_11&gt; &lt;o_alu_old_14&gt; &lt;o_alu_old_15&gt; &lt;o_alu_old_16&gt; &lt;o_alu_old_17&gt; &lt;o_alu_old_18&gt; &lt;o_alu_old_19&gt; &lt;o_alu_old_20&gt; &lt;o_alu_old_21&gt; &lt;o_alu_old_22&gt; &lt;o_alu_old_23&gt; &lt;o_alu_old_24&gt; &lt;o_alu_old_25&gt; &lt;o_alu_old_26&gt; &lt;o_alu_old_27&gt; &lt;o_alu_old_28&gt; &lt;o_alu_old_29&gt; &lt;o_alu_old_30&gt; &lt;o_alu_old_31&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">o_alu_old_4</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">ALU</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">2 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;o_alu_old_8&gt; &lt;o_alu_old_12&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2169" delta="new" >HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+</msg>
+
+</messages>
+

@@ -1,0 +1,4 @@
+verilog work "lcd.v"
+verilog work "single_alu.v"
+verilog work "display.v"
+verilog work "top.v"

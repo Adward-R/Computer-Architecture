@@ -1,0 +1,648 @@
+Release 14.6 - xst P.68d (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> Reading design: ALU.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "ALU.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "ALU"
+Output Format                      : NGC
+Target Device                      : xc3s500e-4-fg320
+
+---- Source Options
+Top Module Name                    : ALU
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "lcd.v" in library work
+Compiling verilog file "single_alu.v" in library work
+Compiling verilog include file "macro.vh"
+Module <lcd> compiled
+Compiling verilog file "display.v" in library work
+Module <single_alu> compiled
+Module <display> compiled
+Compiling verilog file "top.v" in library work
+Module <genlcd> compiled
+Module <ALU> compiled
+No errors in compilation
+Analysis of file <"ALU.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <ALU> in library <work>.
+
+Analyzing hierarchy for module <display> in library <work>.
+
+Analyzing hierarchy for module <single_alu> in library <work>.
+
+Analyzing hierarchy for module <lcd> in library <work>.
+
+Analyzing hierarchy for module <genlcd> in library <work>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <ALU>.
+Module <ALU> is correct for synthesis.
+ 
+Analyzing module <display> in library <work>.
+Module <display> is correct for synthesis.
+ 
+Analyzing module <lcd> in library <work>.
+Module <lcd> is correct for synthesis.
+ 
+Analyzing module <genlcd> in library <work>.
+WARNING:Xst:790 - "display.v" line 122: Index value(s) does not match array range, simulation mismatch.
+Module <genlcd> is correct for synthesis.
+ 
+Analyzing module <single_alu> in library <work>.
+Module <single_alu> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+INFO:Xst:2679 - Register <strdata<127>> in unit <ALU> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <strdata<126>> in unit <ALU> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <strdata<119>> in unit <ALU> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <strdata<118>> in unit <ALU> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <strdata<111>> in unit <ALU> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <strdata<110>> in unit <ALU> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <strdata<103>> in unit <ALU> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <strdata<102>> in unit <ALU> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <rwlcd> in unit <lcd> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <homelcd> in unit <genlcd> has a constant value of 0 during circuit operation. The register is replaced by logic.
+
+Synthesizing Unit <single_alu>.
+    Related source file is "single_alu.v".
+WARNING:Xst:737 - Found 32-bit latch for signal <o_alu>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+    Found 32-bit addsub for signal <o_alu$addsub0000>.
+    Found 32-bit comparator less for signal <o_alu$cmp_lt0000> created at line 39.
+    Found 32-bit comparator equal for signal <o_zf$cmp_eq0001> created at line 41.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred   2 Comparator(s).
+Unit <single_alu> synthesized.
+
+
+Synthesizing Unit <lcd>.
+    Related source file is "lcd.v".
+INFO:Xst:2117 - HDL ADVISOR - Mux Selector <$old_lcdstate_2> of Case statement line 61 was re-encoded using one-hot encoding. The case statement will be optimized (default statement optimization), but this optimization may lead to design initialization problems. To ensure the design works safely, you can:
+   	- add an 'INIT' attribute on signal <$old_lcdstate_2> (optimization is then done without any risk)
+   	- use the attribute 'signal_encoding user' to avoid onehot optimization
+   	- use the attribute 'safe_implementation yes' to force XST to perform a safe (but less efficient) optimization
+    Using one-hot encoding for signal <$old_lcdstate_2>.
+    Using one-hot encoding for signal <$old_lcdstate_5>.
+    Using one-hot encoding for signal <$old_lcdstate_9>.
+    Using one-hot encoding for signal <$old_lcdstate_13>.
+    Using one-hot encoding for signal <$old_lcdstate_17>.
+    Found 4-bit register for signal <lcdd>.
+    Found 1-bit register for signal <lcdhome>.
+    Found 1-bit register for signal <rslcd>.
+    Found 1-bit register for signal <elcd>.
+    Found 1-bit register for signal <lcdreset>.
+    Found 1-bit register for signal <lcdclear>.
+    Found 1-bit register for signal <lcddata>.
+    Found 1-bit register for signal <lcdaddr>.
+    Found 19-bit register for signal <lcdcount>.
+    Found 41-bit register for signal <lcdstate>.
+    Found 19-bit adder for signal <old_lcdcount_3$addsub0000> created at line 52.
+    Summary:
+	inferred  71 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+Unit <lcd> synthesized.
+
+
+Synthesizing Unit <genlcd>.
+    Related source file is "display.v".
+WARNING:Xst:647 - Input <lcdhome> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+INFO:Xst:2117 - HDL ADVISOR - Mux Selector <gstate> of Case statement line 58 was re-encoded using one-hot encoding. The case statement will be optimized (default statement optimization), but this optimization may lead to design initialization problems. To ensure the design works safely, you can:
+   	- add an 'INIT' attribute on signal <gstate> (optimization is then done without any risk)
+   	- use the attribute 'signal_encoding user' to avoid onehot optimization
+   	- use the attribute 'safe_implementation yes' to force XST to perform a safe (but less efficient) optimization
+    Found finite state machine <FSM_0> for signal <gstate>.
+    -----------------------------------------------------------------------
+    | States             | 16                                             |
+    | Transitions        | 22                                             |
+    | Inputs             | 6                                              |
+    | Outputs            | 16                                             |
+    | Clock              | CCLK                      (rising_edge)        |
+    | Reset              | debpb0                    (positive)           |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 0000                                           |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 1-bit register for signal <addrlcd>.
+    Found 1-bit register for signal <initlcd>.
+    Found 1-bit register for signal <datalcd>.
+    Found 1-bit register for signal <clearlcd>.
+    Found 1-bit register for signal <resetlcd>.
+    Found 8-bit register for signal <lcddatin>.
+    Found 33-bit comparator less for signal <gstate$cmp_lt0000> created at line 140.
+    Found 32-bit register for signal <i>.
+    Found 33-bit comparator greater for signal <lcddatin$cmp_gt0000> created at line 101.
+    Found 32-bit subtractor for signal <old_i_20$sub0000> created at line 139.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred  45 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred   2 Comparator(s).
+Unit <genlcd> synthesized.
+
+
+Synthesizing Unit <display>.
+    Related source file is "display.v".
+Unit <display> synthesized.
+
+
+Synthesizing Unit <ALU>.
+    Related source file is "top.v".
+WARNING:Xst:653 - Signal <strdata<255:128>> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.
+WARNING:Xst:653 - Signal <strdata<95:0>> is used but never assigned. This sourceless signal will be automatically connected to value 000000000000000000000000001100010011000100110001001100010010000000110010001100100011001000110010.
+WARNING:Xst:653 - Signal <i_s> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000000000010001000100010.
+WARNING:Xst:653 - Signal <i_r> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000000000001000100010001.
+    Found 32-bit register for signal <o_alu_old>.
+    Found 1-bit register for signal <rst>.
+    Found 6-bit register for signal <strdata<125:120>>.
+    Found 6-bit register for signal <strdata<117:112>>.
+    Found 6-bit register for signal <strdata<109:104>>.
+    Found 6-bit register for signal <strdata<101:96>>.
+    Found 6-bit adder for signal <strdata_103_96$add0000> created at line 69.
+    Found 6-bit adder for signal <strdata_111_104$add0000> created at line 68.
+    Found 6-bit adder for signal <strdata_119_112$add0000> created at line 67.
+    Found 32-bit comparator not equal for signal <strdata_125$cmp_ne0000> created at line 65.
+    Found 6-bit adder for signal <strdata_127_120$add0000> created at line 66.
+    Summary:
+	inferred  57 D-type flip-flop(s).
+	inferred   4 Adder/Subtractor(s).
+	inferred   1 Comparator(s).
+Unit <ALU> synthesized.
+
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 7
+ 19-bit adder                                          : 1
+ 32-bit addsub                                         : 1
+ 32-bit subtractor                                     : 1
+ 6-bit adder                                           : 4
+# Registers                                            : 46
+ 1-bit register                                        : 41
+ 19-bit register                                       : 1
+ 32-bit register                                       : 2
+ 41-bit register                                       : 1
+ 8-bit register                                        : 1
+# Latches                                              : 1
+ 32-bit latch                                          : 1
+# Comparators                                          : 5
+ 32-bit comparator equal                               : 1
+ 32-bit comparator less                                : 1
+ 32-bit comparator not equal                           : 1
+ 33-bit comparator greater                             : 1
+ 33-bit comparator less                                : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <M0/M1/gstate/FSM> on signal <gstate[1:16]> with one-hot encoding.
+---------------------------
+ State | Encoding
+---------------------------
+ 0000  | 0000000000000001
+ 0001  | 0000000000000010
+ 0010  | 0000000000000100
+ 0011  | 0000000000001000
+ 0100  | 0000000000010000
+ 0101  | 0000000000100000
+ 0110  | 0000000001000000
+ 0111  | 0000000010000000
+ 1000  | 0000000100000000
+ 1001  | 0000001000000000
+ 1010  | 0000010000000000
+ 1011  | 0000100000000000
+ 1100  | 0001000000000000
+ 1101  | 0010000000000000
+ 1110  | 0100000000000000
+ 1111  | 1000000000000000
+---------------------------
+WARNING:Xst:2677 - Node <lcdstate_40> of sequential type is unconnected in block <M0>.
+WARNING:Xst:2677 - Node <lcdstate_40> of sequential type is unconnected in block <lcd>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 1
+# Adders/Subtractors                                   : 7
+ 19-bit adder                                          : 1
+ 32-bit addsub                                         : 1
+ 32-bit subtractor                                     : 1
+ 6-bit adder                                           : 4
+# Registers                                            : 172
+ Flip-Flops                                            : 172
+# Latches                                              : 1
+ 32-bit latch                                          : 1
+# Comparators                                          : 5
+ 32-bit comparator equal                               : 1
+ 32-bit comparator less                                : 1
+ 32-bit comparator not equal                           : 1
+ 33-bit comparator greater                             : 1
+ 33-bit comparator less                                : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1426 - The value init of the FF/Latch strdata_125 hinder the constant cleaning in the block ALU.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch strdata_124 hinder the constant cleaning in the block ALU.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch strdata_117 hinder the constant cleaning in the block ALU.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch strdata_116 hinder the constant cleaning in the block ALU.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch strdata_109 hinder the constant cleaning in the block ALU.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch strdata_108 hinder the constant cleaning in the block ALU.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch strdata_101 hinder the constant cleaning in the block ALU.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch strdata_100 hinder the constant cleaning in the block ALU.
+   You should achieve better results by setting this init to 1.
+INFO:Xst:2261 - The FF/Latch <o_alu_4> in Unit <single_alu> is equivalent to the following 2 FFs/Latches, which will be removed : <o_alu_8> <o_alu_12> 
+INFO:Xst:2261 - The FF/Latch <o_alu_2> in Unit <single_alu> is equivalent to the following 23 FFs/Latches, which will be removed : <o_alu_3> <o_alu_6> <o_alu_7> <o_alu_10> <o_alu_11> <o_alu_14> <o_alu_15> <o_alu_16> <o_alu_17> <o_alu_18> <o_alu_19> <o_alu_20> <o_alu_21> <o_alu_22> <o_alu_23> <o_alu_24> <o_alu_25> <o_alu_26> <o_alu_27> <o_alu_28> <o_alu_29> <o_alu_30> <o_alu_31> 
+INFO:Xst:2261 - The FF/Latch <o_alu_old_0> in Unit <ALU> is equivalent to the following FF/Latch, which will be removed : <strdata_96> 
+INFO:Xst:2261 - The FF/Latch <o_alu_old_1> in Unit <ALU> is equivalent to the following FF/Latch, which will be removed : <strdata_97> 
+INFO:Xst:2261 - The FF/Latch <strdata_125> in Unit <ALU> is equivalent to the following 7 FFs/Latches, which will be removed : <strdata_124> <strdata_117> <strdata_116> <strdata_109> <strdata_108> <strdata_101> <strdata_100> 
+INFO:Xst:2261 - The FF/Latch <o_alu_old_2> in Unit <ALU> is equivalent to the following FF/Latch, which will be removed : <strdata_98> 
+INFO:Xst:2261 - The FF/Latch <o_alu_old_3> in Unit <ALU> is equivalent to the following FF/Latch, which will be removed : <strdata_99> 
+INFO:Xst:2261 - The FF/Latch <o_alu_old_4> in Unit <ALU> is equivalent to the following FF/Latch, which will be removed : <strdata_104> 
+INFO:Xst:2261 - The FF/Latch <o_alu_old_5> in Unit <ALU> is equivalent to the following FF/Latch, which will be removed : <strdata_105> 
+INFO:Xst:2261 - The FF/Latch <o_alu_old_6> in Unit <ALU> is equivalent to the following FF/Latch, which will be removed : <strdata_106> 
+INFO:Xst:2261 - The FF/Latch <o_alu_old_7> in Unit <ALU> is equivalent to the following FF/Latch, which will be removed : <strdata_107> 
+INFO:Xst:2261 - The FF/Latch <o_alu_old_8> in Unit <ALU> is equivalent to the following FF/Latch, which will be removed : <strdata_112> 
+INFO:Xst:2261 - The FF/Latch <o_alu_old_9> in Unit <ALU> is equivalent to the following FF/Latch, which will be removed : <strdata_113> 
+INFO:Xst:2261 - The FF/Latch <o_alu_old_10> in Unit <ALU> is equivalent to the following FF/Latch, which will be removed : <strdata_114> 
+INFO:Xst:2261 - The FF/Latch <o_alu_old_11> in Unit <ALU> is equivalent to the following FF/Latch, which will be removed : <strdata_115> 
+INFO:Xst:2261 - The FF/Latch <o_alu_old_12> in Unit <ALU> is equivalent to the following FF/Latch, which will be removed : <strdata_120> 
+INFO:Xst:2261 - The FF/Latch <o_alu_old_13> in Unit <ALU> is equivalent to the following FF/Latch, which will be removed : <strdata_121> 
+INFO:Xst:2261 - The FF/Latch <o_alu_old_14> in Unit <ALU> is equivalent to the following FF/Latch, which will be removed : <strdata_122> 
+INFO:Xst:2261 - The FF/Latch <o_alu_old_15> in Unit <ALU> is equivalent to the following FF/Latch, which will be removed : <strdata_123> 
+
+Optimizing unit <ALU> ...
+
+Optimizing unit <lcd> ...
+
+Optimizing unit <genlcd> ...
+WARNING:Xst:1710 - FF/Latch <i_0> (without init value) has a constant value of 1 in block <genlcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <i_1> (without init value) has a constant value of 1 in block <genlcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <i_2> (without init value) has a constant value of 1 in block <genlcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lcddatin_7> (without init value) has a constant value of 0 in block <genlcd>. This FF/Latch will be trimmed during the optimization process.
+
+Optimizing unit <single_alu> ...
+INFO:Xst:2261 - The FF/Latch <o_alu_1> in Unit <single_alu> is equivalent to the following 3 FFs/Latches, which will be removed : <o_alu_5> <o_alu_9> <o_alu_13> 
+WARNING:Xst:1710 - FF/Latch <M0/M0/lcdhome> (without init value) has a constant value of 0 in block <ALU>. This FF/Latch will be trimmed during the optimization process.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+INFO:Xst:2261 - The FF/Latch <o_alu_old_1> in Unit <ALU> is equivalent to the following 3 FFs/Latches, which will be removed : <o_alu_old_5> <o_alu_old_9> <o_alu_old_13> 
+INFO:Xst:2261 - The FF/Latch <o_alu_old_2> in Unit <ALU> is equivalent to the following 23 FFs/Latches, which will be removed : <o_alu_old_3> <o_alu_old_6> <o_alu_old_7> <o_alu_old_10> <o_alu_old_11> <o_alu_old_14> <o_alu_old_15> <o_alu_old_16> <o_alu_old_17> <o_alu_old_18> <o_alu_old_19> <o_alu_old_20> <o_alu_old_21> <o_alu_old_22> <o_alu_old_23> <o_alu_old_24> <o_alu_old_25> <o_alu_old_26> <o_alu_old_27> <o_alu_old_28> <o_alu_old_29> <o_alu_old_30> <o_alu_old_31> 
+INFO:Xst:2261 - The FF/Latch <o_alu_old_4> in Unit <ALU> is equivalent to the following 2 FFs/Latches, which will be removed : <o_alu_old_8> <o_alu_old_12> 
+Found area constraint ratio of 100 (+ 5) on block ALU, actual ratio is 5.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 131
+ Flip-Flops                                            : 131
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : ALU.ngr
+Top Level Output File Name         : ALU
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 12
+
+Cell Usage :
+# BELS                             : 781
+#      GND                         : 1
+#      INV                         : 38
+#      LUT1                        : 18
+#      LUT2                        : 48
+#      LUT2_D                      : 4
+#      LUT2_L                      : 8
+#      LUT3                        : 75
+#      LUT3_D                      : 7
+#      LUT3_L                      : 10
+#      LUT4                        : 306
+#      LUT4_D                      : 46
+#      LUT4_L                      : 43
+#      MUXCY                       : 83
+#      MUXF5                       : 45
+#      VCC                         : 1
+#      XORCY                       : 48
+# FlipFlops/Latches                : 135
+#      FD                          : 57
+#      FDE                         : 43
+#      FDR                         : 12
+#      FDRE                        : 3
+#      FDRS                        : 3
+#      FDRSE                       : 3
+#      FDS                         : 10
+#      LD                          : 4
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 11
+#      IBUF                        : 3
+#      OBUF                        : 8
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s500efg320-4 
+
+ Number of Slices:                      314  out of   4656     6%  
+ Number of Slice Flip Flops:            135  out of   9312     1%  
+ Number of 4 input LUTs:                603  out of   9312     6%  
+ Number of IOs:                          12
+ Number of bonded IOBs:                  12  out of    232     5%  
+ Number of GCLKs:                         1  out of     24     4%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+CCLK                               | BUFGP                  | 131   |
+M1/o_alu_or0000(M1/o_alu_or00001:O)| NONE(*)(M1/o_alu_4)    | 4     |
+-----------------------------------+------------------------+-------+
+(*) This 1 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 20.686ns (Maximum Frequency: 48.342MHz)
+   Minimum input arrival time before clock: 3.038ns
+   Maximum output required time after clock: 4.394ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'CCLK'
+  Clock period: 20.686ns (frequency: 48.342MHz)
+  Total number of paths / destination ports: 9170543 / 207
+-------------------------------------------------------------------------
+Delay:               20.686ns (Levels of Logic = 30)
+  Source:            M0/M0/lcdcount_1 (FF)
+  Destination:       M0/M0/lcdstate_7 (FF)
+  Source Clock:      CCLK rising
+  Destination Clock: CCLK rising
+
+  Data Path: M0/M0/lcdcount_1 to M0/M0/lcdstate_7
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               1   0.591   0.595  M0/M0/lcdcount_1 (M0/M0/lcdcount_1)
+     LUT1:I0->O            1   0.704   0.000  M0/M0/Madd_old_lcdcount_3_addsub0000_cy<1>_rt (M0/M0/Madd_old_lcdcount_3_addsub0000_cy<1>_rt)
+     MUXCY:S->O            1   0.464   0.000  M0/M0/Madd_old_lcdcount_3_addsub0000_cy<1> (M0/M0/Madd_old_lcdcount_3_addsub0000_cy<1>)
+     MUXCY:CI->O           1   0.059   0.000  M0/M0/Madd_old_lcdcount_3_addsub0000_cy<2> (M0/M0/Madd_old_lcdcount_3_addsub0000_cy<2>)
+     MUXCY:CI->O           1   0.059   0.000  M0/M0/Madd_old_lcdcount_3_addsub0000_cy<3> (M0/M0/Madd_old_lcdcount_3_addsub0000_cy<3>)
+     MUXCY:CI->O           1   0.059   0.000  M0/M0/Madd_old_lcdcount_3_addsub0000_cy<4> (M0/M0/Madd_old_lcdcount_3_addsub0000_cy<4>)
+     MUXCY:CI->O           1   0.059   0.000  M0/M0/Madd_old_lcdcount_3_addsub0000_cy<5> (M0/M0/Madd_old_lcdcount_3_addsub0000_cy<5>)
+     MUXCY:CI->O           1   0.059   0.000  M0/M0/Madd_old_lcdcount_3_addsub0000_cy<6> (M0/M0/Madd_old_lcdcount_3_addsub0000_cy<6>)
+     MUXCY:CI->O           1   0.059   0.000  M0/M0/Madd_old_lcdcount_3_addsub0000_cy<7> (M0/M0/Madd_old_lcdcount_3_addsub0000_cy<7>)
+     MUXCY:CI->O           1   0.059   0.000  M0/M0/Madd_old_lcdcount_3_addsub0000_cy<8> (M0/M0/Madd_old_lcdcount_3_addsub0000_cy<8>)
+     MUXCY:CI->O           1   0.059   0.000  M0/M0/Madd_old_lcdcount_3_addsub0000_cy<9> (M0/M0/Madd_old_lcdcount_3_addsub0000_cy<9>)
+     MUXCY:CI->O           1   0.059   0.000  M0/M0/Madd_old_lcdcount_3_addsub0000_cy<10> (M0/M0/Madd_old_lcdcount_3_addsub0000_cy<10>)
+     MUXCY:CI->O           1   0.059   0.000  M0/M0/Madd_old_lcdcount_3_addsub0000_cy<11> (M0/M0/Madd_old_lcdcount_3_addsub0000_cy<11>)
+     MUXCY:CI->O           1   0.059   0.000  M0/M0/Madd_old_lcdcount_3_addsub0000_cy<12> (M0/M0/Madd_old_lcdcount_3_addsub0000_cy<12>)
+     MUXCY:CI->O           1   0.059   0.000  M0/M0/Madd_old_lcdcount_3_addsub0000_cy<13> (M0/M0/Madd_old_lcdcount_3_addsub0000_cy<13>)
+     MUXCY:CI->O           1   0.059   0.000  M0/M0/Madd_old_lcdcount_3_addsub0000_cy<14> (M0/M0/Madd_old_lcdcount_3_addsub0000_cy<14>)
+     MUXCY:CI->O           1   0.059   0.000  M0/M0/Madd_old_lcdcount_3_addsub0000_cy<15> (M0/M0/Madd_old_lcdcount_3_addsub0000_cy<15>)
+     MUXCY:CI->O           1   0.059   0.000  M0/M0/Madd_old_lcdcount_3_addsub0000_cy<16> (M0/M0/Madd_old_lcdcount_3_addsub0000_cy<16>)
+     XORCY:CI->O          17   0.804   1.055  M0/M0/Madd_old_lcdcount_3_addsub0000_xor<17> (M0/M0/old_lcdcount_3_addsub0000<17>)
+     LUT4_D:I3->O         10   0.704   0.917  M0/M0/old_lcdstate_5_cmp_eq0000140 (M0/M0/old_lcdstate_5_cmp_eq0000140)
+     LUT4:I2->O            4   0.704   0.591  M0/M0/old_lcdstate_5_cmp_eq000221 (M0/M0/N741)
+     LUT4:I3->O            2   0.704   0.482  M0/M0/_old_lcdcount_6<11>11_SW0 (N147)
+     LUT4:I2->O           12   0.704   0.965  M0/M0/_old_lcdcount_6<11>79 (M0/M0/_old_lcdcount_6<11>)
+     LUT4:I3->O            7   0.704   0.712  M0/M0/old_lcdstate_9_cmp_eq000011_SW0_SW0 (N354)
+     LUT4_L:I3->LO         1   0.704   0.104  M0/M0/old_lcdstate_9_cmp_eq00021 (M0/M0/old_lcdstate_9_cmp_eq0002)
+     LUT4:I3->O            8   0.704   0.761  M0/M0/_old_lcdstate_13<3> (M0/M0/_old_lcdstate_13<3>)
+     LUT4:I3->O            1   0.704   0.455  M0/M0/_old_lcdcount_18<6>_SW0_SW0 (N240)
+     LUT4:I2->O           10   0.704   0.917  M0/M0/_old_lcdcount_18<6> (M0/M0/_old_lcdcount_18<6>)
+     LUT3:I2->O            9   0.704   0.824  M0/M0/lcdstate_cmp_eq000031 (M0/M0/N691)
+     LUT4_L:I3->LO         1   0.704   0.104  M0/M0/lcdstate_mux0000<33>_SW0 (N137)
+     LUT4:I3->O            1   0.704   0.000  M0/M0/lcdstate_mux0000<33> (M0/M0/lcdstate_mux0000<33>)
+     FD:D                      0.308          M0/M0/lcdstate_7
+    ----------------------------------------
+    Total                     20.686ns (12.204ns logic, 8.482ns route)
+                                       (59.0% logic, 41.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'M1/o_alu_or0000'
+  Total number of paths / destination ports: 12 / 4
+-------------------------------------------------------------------------
+Offset:              3.038ns (Levels of Logic = 2)
+  Source:            SW<2> (PAD)
+  Destination:       M1/o_alu_4 (LATCH)
+  Destination Clock: M1/o_alu_or0000 falling
+
+  Data Path: SW<2> to M1/o_alu_4
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             5   1.218   0.808  SW_2_IBUF (SW_2_IBUF)
+     LUT3:I0->O            1   0.704   0.000  M1/o_alu_mux0001<10>1 (M1/o_alu_mux0001<10>)
+     LD:D                      0.308          M1/o_alu_2
+    ----------------------------------------
+    Total                      3.038ns (2.230ns logic, 0.808ns route)
+                                       (73.4% logic, 26.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'CCLK'
+  Total number of paths / destination ports: 6 / 6
+-------------------------------------------------------------------------
+Offset:              4.394ns (Levels of Logic = 1)
+  Source:            M0/M0/elcd (FF)
+  Destination:       LCDE (PAD)
+  Source Clock:      CCLK rising
+
+  Data Path: M0/M0/elcd to LCDE
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               3   0.591   0.531  M0/M0/elcd (M0/M0/elcd)
+     OBUF:I->O                 3.272          LCDE_OBUF (LCDE)
+    ----------------------------------------
+    Total                      4.394ns (3.863ns logic, 0.531ns route)
+                                       (87.9% logic, 12.1% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 17.00 secs
+Total CPU time to Xst completion: 16.52 secs
+ 
+--> 
+
+Total memory usage is 277692 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   22 (   0 filtered)
+Number of infos    :   38 (   0 filtered)
+

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated   -->
+<!--     by the Xilinx ISE software.  Any direct editing or        -->
+<!--     changes made to this file may result in unpredictable     -->
+<!--     behavior or data corruption.  It is strongly advised that -->
+<!--     users do not edit the contents of this file.              -->
+<!--                                                               -->
+<!-- Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.    -->
+
+<messages>
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;C:/Users/Keyang/Desktop/3130000020/lab1/aluc/single_alu.v&quot; into library work</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="281" >&quot;<arg fmt="%s" index="1">C:/Users/Keyang/Desktop/3130000020/lab1/aluc/single_alu.v</arg>&quot; Line <arg fmt="%d" index="2">21</arg>. <arg fmt="%s" index="3">Cannot open include file &quot;macro.vh&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="870" >&quot;<arg fmt="%s" index="1">C:/Users/Keyang/Desktop/3130000020/lab1/aluc/single_alu.v</arg>&quot; Line <arg fmt="%d" index="2">35</arg>. <arg fmt="%s" index="3">Macro &lt;ALU_CTL_AND&gt; is not defined.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">C:/Users/Keyang/Desktop/3130000020/lab1/aluc/single_alu.v</arg>&quot; Line <arg fmt="%d" index="2">35</arg>. <arg fmt="%s" index="3">Syntax error near &quot;:&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="870" >&quot;<arg fmt="%s" index="1">C:/Users/Keyang/Desktop/3130000020/lab1/aluc/single_alu.v</arg>&quot; Line <arg fmt="%d" index="2">36</arg>. <arg fmt="%s" index="3">Macro &lt;ALU_CTL_OR&gt; is not defined.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">C:/Users/Keyang/Desktop/3130000020/lab1/aluc/single_alu.v</arg>&quot; Line <arg fmt="%d" index="2">36</arg>. <arg fmt="%s" index="3">Syntax error near &quot;:&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="870" >&quot;<arg fmt="%s" index="1">C:/Users/Keyang/Desktop/3130000020/lab1/aluc/single_alu.v</arg>&quot; Line <arg fmt="%d" index="2">37</arg>. <arg fmt="%s" index="3">Macro &lt;ALU_CTL_ADD&gt; is not defined.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">C:/Users/Keyang/Desktop/3130000020/lab1/aluc/single_alu.v</arg>&quot; Line <arg fmt="%d" index="2">37</arg>. <arg fmt="%s" index="3">Syntax error near &quot;:&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="870" >&quot;<arg fmt="%s" index="1">C:/Users/Keyang/Desktop/3130000020/lab1/aluc/single_alu.v</arg>&quot; Line <arg fmt="%d" index="2">38</arg>. <arg fmt="%s" index="3">Macro &lt;ALU_CTL_SUB&gt; is not defined.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">C:/Users/Keyang/Desktop/3130000020/lab1/aluc/single_alu.v</arg>&quot; Line <arg fmt="%d" index="2">38</arg>. <arg fmt="%s" index="3">Syntax error near &quot;:&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="870" >&quot;<arg fmt="%s" index="1">C:/Users/Keyang/Desktop/3130000020/lab1/aluc/single_alu.v</arg>&quot; Line <arg fmt="%d" index="2">39</arg>. <arg fmt="%s" index="3">Macro &lt;ALU_CTL_SLT&gt; is not defined.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">C:/Users/Keyang/Desktop/3130000020/lab1/aluc/single_alu.v</arg>&quot; Line <arg fmt="%d" index="2">39</arg>. <arg fmt="%s" index="3">Syntax error near &quot;:&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">C:/Users/Keyang/Desktop/3130000020/lab1/aluc/single_alu.v</arg>&quot; Line <arg fmt="%d" index="2">41</arg>. <arg fmt="%s" index="3">Syntax error near &quot;)&quot;.</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;C:/Users/Keyang/Desktop/3130000020/lab1/aluc/single_aluc.v&quot; into library work</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="870" >&quot;<arg fmt="%s" index="1">C:/Users/Keyang/Desktop/3130000020/lab1/aluc/single_aluc.v</arg>&quot; Line <arg fmt="%d" index="2">45</arg>. <arg fmt="%s" index="3">Macro &lt;ALUC_CLT_ADD&gt; is not defined.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">C:/Users/Keyang/Desktop/3130000020/lab1/aluc/single_aluc.v</arg>&quot; Line <arg fmt="%d" index="2">45</arg>. <arg fmt="%s" index="3">Syntax error near &quot;;&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="870" >&quot;<arg fmt="%s" index="1">C:/Users/Keyang/Desktop/3130000020/lab1/aluc/single_aluc.v</arg>&quot; Line <arg fmt="%d" index="2">46</arg>. <arg fmt="%s" index="3">Macro &lt;ALUC_CLT_SUB&gt; is not defined.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">C:/Users/Keyang/Desktop/3130000020/lab1/aluc/single_aluc.v</arg>&quot; Line <arg fmt="%d" index="2">46</arg>. <arg fmt="%s" index="3">Syntax error near &quot;;&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">C:/Users/Keyang/Desktop/3130000020/lab1/aluc/single_aluc.v</arg>&quot; Line <arg fmt="%d" index="2">49</arg>. <arg fmt="%s" index="3">Syntax error near &quot;;&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">C:/Users/Keyang/Desktop/3130000020/lab1/aluc/single_aluc.v</arg>&quot; Line <arg fmt="%d" index="2">50</arg>. <arg fmt="%s" index="3">Syntax error near &quot;;&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="870" >&quot;<arg fmt="%s" index="1">C:/Users/Keyang/Desktop/3130000020/lab1/aluc/single_aluc.v</arg>&quot; Line <arg fmt="%d" index="2">51</arg>. <arg fmt="%s" index="3">Macro &lt;ALUC_CLT_AND&gt; is not defined.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">C:/Users/Keyang/Desktop/3130000020/lab1/aluc/single_aluc.v</arg>&quot; Line <arg fmt="%d" index="2">51</arg>. <arg fmt="%s" index="3">Syntax error near &quot;;&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="870" >&quot;<arg fmt="%s" index="1">C:/Users/Keyang/Desktop/3130000020/lab1/aluc/single_aluc.v</arg>&quot; Line <arg fmt="%d" index="2">52</arg>. <arg fmt="%s" index="3">Macro &lt;ALUC_CLT_OR&gt; is not defined.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">C:/Users/Keyang/Desktop/3130000020/lab1/aluc/single_aluc.v</arg>&quot; Line <arg fmt="%d" index="2">52</arg>. <arg fmt="%s" index="3">Syntax error near &quot;;&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="870" >&quot;<arg fmt="%s" index="1">C:/Users/Keyang/Desktop/3130000020/lab1/aluc/single_aluc.v</arg>&quot; Line <arg fmt="%d" index="2">53</arg>. <arg fmt="%s" index="3">Macro &lt;ALUC_CLT_SLT&gt; is not defined.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">C:/Users/Keyang/Desktop/3130000020/lab1/aluc/single_aluc.v</arg>&quot; Line <arg fmt="%d" index="2">53</arg>. <arg fmt="%s" index="3">Syntax error near &quot;;&quot;.</arg>
+</msg>
+
+</messages>
+

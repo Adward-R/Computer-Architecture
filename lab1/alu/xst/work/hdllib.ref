@@ -1,0 +1,5 @@
+MO display NULL display.v vlg1E/display.bin 1426605659
+MO lcd NULL lcd.v vlg5F/lcd.bin 1426605659
+MO genlcd NULL display.v vlg7D/genlcd.bin 1426605659
+MO single_alu NULL single_alu.v vlg7B/single__alu.bin 1426605659
+MO ALU NULL top.v vlg2A/_a_l_u.bin 1426605659
