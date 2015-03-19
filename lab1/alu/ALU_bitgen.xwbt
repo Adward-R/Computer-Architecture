@@ -1,8 +1,0 @@
-INTSTYLE=ise
-INFILE=C:\Users\Keyang\Desktop\3130000020\lab1\alu\ALU.ncd
-OUTFILE=C:\Users\Keyang\Desktop\3130000020\lab1\alu\ALU.bit
-FAMILY=Spartan3E
-PART=xc3s500e-4fg320
-WORKINGDIR=C:\Users\Keyang\Desktop\3130000020\lab1\alu
-LICENSE=WebPack
-USER_INFO=211020922_0_0_613
