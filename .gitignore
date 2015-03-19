@@ -41,6 +41,6 @@
 *.bin
 *.sdbl
 *.sdbx
-*.xrepost
+*.xreport
 *.lso
 *.xml
