@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2015-03-17T23:31:52</DateModified>
+  <DateModified>2015-03-19T13:49:16</DateModified>
   <ModuleName>aluc</ModuleName>
-  <SummaryTimeStamp>Unknown</SummaryTimeStamp>
-  <SavedFilePath>C:/Users/Keyang/Desktop/3130000020/lab1/aluc/iseconfig/aluc.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>C:/Users/Keyang/Desktop/3130000020/lab1/aluc</ImplementationReportsDirectory>
+  <SummaryTimeStamp>2015-03-19T12:59:22</SummaryTimeStamp>
+  <SavedFilePath>Z:/Users/Adward/GitHub/Computer-Architecture/lab1/aluc/iseconfig/aluc.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>Z:/Users/Adward/GitHub/Computer-Architecture/lab1/aluc\</ImplementationReportsDirectory>
   <DateInitialized>2015-03-17T23:29:52</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

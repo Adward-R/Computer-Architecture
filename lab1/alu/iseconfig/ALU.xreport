@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2015-03-17T23:04:41</DateModified>
+  <DateModified>2015-03-19T13:51:30</DateModified>
   <ModuleName>ALU</ModuleName>
-  <SummaryTimeStamp>Unknown</SummaryTimeStamp>
-  <SavedFilePath>C:/Users/Keyang/Desktop/3130000020/lab1/alu/iseconfig/ALU.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>C:/Users/Keyang/Desktop/3130000020/lab1/alu\</ImplementationReportsDirectory>
+  <SummaryTimeStamp>2015-03-19T13:47:21</SummaryTimeStamp>
+  <SavedFilePath>Z:/Users/Adward/GitHub/Computer-Architecture/lab1/alu/iseconfig/ALU.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>Z:/Users/Adward/GitHub/Computer-Architecture/lab1/alu\</ImplementationReportsDirectory>
   <DateInitialized>2013-02-12T20:10:42</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

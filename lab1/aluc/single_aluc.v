@@ -33,7 +33,7 @@
 `define RTYPE_ADDU		4'b0001
 `define RTYPE_SLTU		4'b1011
 
-module alucu(aluop, func, aluc);
+module aluc(aluop, func, aluc);
     input [1:0] aluop;
     input [5:0] func;
     output [2:0] aluc;

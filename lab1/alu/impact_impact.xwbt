@@ -1,0 +1,8 @@
+INTSTYLE=impact
+INFILE=Z:\Users\Adward\GitHub\Computer-Architecture\lab1\alu\impact.xsl
+OUTFILE=Z:\Users\Adward\GitHub\Computer-Architecture\lab1\alu\impact.xsl
+FAMILY=Multiple
+PART=Multiple
+WORKINGDIR=Z:\Users\Adward\GitHub\Computer-Architecture\lab1\alu
+LICENSE=iMPACT
+USER_INFO=iMPACT

@@ -1,0 +1,1 @@
+xst -intstyle ise -ifn "Z:/Users/Adward/GitHub/Computer-Architecture/lab1/aluc/aluc.xst" -ofn "Z:/Users/Adward/GitHub/Computer-Architecture/lab1/aluc/aluc.syr" 
