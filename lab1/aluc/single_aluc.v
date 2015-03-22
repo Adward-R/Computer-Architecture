@@ -45,7 +45,7 @@ module single_aluc(aluop, func, aluc);
 			2'b00: aluc = `ALUC_CTL_ADD;
 			2'b11: aluc = `ALUC_CTL_SUB;
 			2'b10: begin
-				case (func)
+				case (func[3:0])
 					`RTYPE_ADD: aluc = `ALUC_CTL_ADD;
 					`RTYPE_SUB: aluc = `ALUC_CTL_SUB;
 					`RTYPE_AND: aluc = `ALUC_CTL_AND;
