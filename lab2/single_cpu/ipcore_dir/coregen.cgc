@@ -1,0 +1,1074 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spirit:design xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xilinx="http://www.xilinx.com" >
+   <spirit:vendor>xilinx.com</spirit:vendor>
+   <spirit:library>project</spirit:library>
+   <spirit:name>coregen</spirit:name>
+   <spirit:version>1.0</spirit:version>
+   <spirit:componentInstances>
+      <spirit:componentInstance>
+         <spirit:instanceName>c_dat_mem</spirit:instanceName>
+         <spirit:componentRef spirit:vendor="xilinx.com" spirit:library="ip" spirit:name="dist_mem_gen" spirit:version="7.2" />
+         <spirit:configurableElementValues>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.DEPTH">32</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.DATA_WIDTH">32</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.COMPONENT_NAME">c_dat_mem</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.MEMORY_TYPE">single_port_ram</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.INPUT_OPTIONS">non_registered</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.INPUT_CLOCK_ENABLE">false</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.QUALIFY_WE_WITH_I_CE">false</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.DUAL_PORT_ADDRESS">non_registered</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.SIMPLE_DUAL_PORT_ADDRESS">non_registered</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.OUTPUT_OPTIONS">non_registered</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.PIPELINE_STAGES">0</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.COMMON_OUTPUT_CLK">false</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.SINGLE_PORT_OUTPUT_CLOCK_ENABLE">false</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.COMMON_OUTPUT_CE">false</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.DUAL_PORT_OUTPUT_CLOCK_ENABLE">false</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.SIMPLE_DUAL_PORT_OUTPUT_CLOCK_ENABLE">false</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.COEFFICIENT_FILE">Z:\Users\Adward\GitHub\Computer-Architecture\lab2\single_cpu\c_dat_mem.coe</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.DEFAULT_DATA_RADIX">2</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.DEFAULT_DATA">0</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.RESET_QSPO">false</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.RESET_QDPO">false</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.RESET_QSDPO">false</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.SYNC_RESET_QSPO">false</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.SYNC_RESET_QDPO">false</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.SYNC_RESET_QSDPO">false</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.CE_OVERRIDES">ce_overrides_sync_controls</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_FAMILY">spartan3</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_ADDR_WIDTH">5</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_DEFAULT_DATA">0</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_DEPTH">32</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_HAS_CLK">1</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_HAS_D">1</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_HAS_DPO">0</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_HAS_DPRA">0</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_HAS_I_CE">0</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_HAS_QDPO">0</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_HAS_QDPO_CE">0</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_HAS_QDPO_CLK">0</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_HAS_QDPO_RST">0</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_HAS_QDPO_SRST">0</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_HAS_QSPO">0</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_HAS_QSPO_CE">0</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_HAS_QSPO_RST">0</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_HAS_QSPO_SRST">0</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_HAS_SPO">1</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_HAS_SPRA">0</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_HAS_WE">1</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_MEM_INIT_FILE">c_dat_mem.mif</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_ELABORATION_DIR">Z:/Users/Adward/GitHub/Computer-Architecture/lab2/single_cpu/ipcore_dir/tmp/_cg/</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_MEM_TYPE">1</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_PIPELINE_STAGES">0</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_QCE_JOINED">0</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_QUALIFY_WE">0</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_READ_MIF">1</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_REG_A_D_INPUTS">0</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_REG_DPRA_INPUT">0</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_SYNC_ENABLE">1</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_WIDTH">32</spirit:configurableElementValue>
+         </spirit:configurableElementValues>
+         <spirit:vendorExtensions>
+            <xilinx:instanceProperties xmlns:xilinx="http://www.xilinx.com">
+               <xilinx:projectOptions>
+                  <xilinx:projectName>coregen</xilinx:projectName>
+                  <xilinx:outputDirectory>./</xilinx:outputDirectory>
+                  <xilinx:workingDirectory>./tmp/</xilinx:workingDirectory>
+                  <xilinx:subWorkingDirectory>./tmp/_cg/</xilinx:subWorkingDirectory>
+               </xilinx:projectOptions>
+               <xilinx:part>
+                  <xilinx:device>xc3s500e</xilinx:device>
+                  <xilinx:deviceFamily>spartan3e</xilinx:deviceFamily>
+                  <xilinx:package>fg320</xilinx:package>
+                  <xilinx:speedGrade>-4</xilinx:speedGrade>
+               </xilinx:part>
+               <xilinx:flowOptions>
+                  <xilinx:busFormat>BusFormatAngleBracketNotRipped</xilinx:busFormat>
+                  <xilinx:designEntry>Verilog</xilinx:designEntry>
+                  <xilinx:asySymbol>true</xilinx:asySymbol>
+                  <xilinx:flowVendor>Other</xilinx:flowVendor>
+                  <xilinx:addPads>false</xilinx:addPads>
+                  <xilinx:removeRPMs>false</xilinx:removeRPMs>
+                  <xilinx:createNDF>false</xilinx:createNDF>
+                  <xilinx:implementationFileType>Ngc</xilinx:implementationFileType>
+                  <xilinx:formalVerification>false</xilinx:formalVerification>
+               </xilinx:flowOptions>
+               <xilinx:simulationOptions>
+                  <xilinx:simulationModel>Behavioral</xilinx:simulationModel>
+                  <xilinx:simulationLanguage>Verilog</xilinx:simulationLanguage>
+                  <xilinx:foundationSym>false</xilinx:foundationSym>
+               </xilinx:simulationOptions>
+               <xilinx:packageInfo>
+                  <xilinx:sourceCoreCreationDate>2012-11-21+20:07</xilinx:sourceCoreCreationDate>
+               </xilinx:packageInfo>
+            </xilinx:instanceProperties>
+            <xilinx:generationHistory>
+               <xilinx:fileSet>
+                  <xilinx:name>customization_generator</xilinx:name>
+                  <xilinx:file>
+                     <xilinx:name>./c_dat_mem.mif</xilinx:name>
+                     <xilinx:userFileType>mif</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:25:06 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0xA2604D96</xilinx:checkSum>
+                     <xilinx:generationId>generationID_1767355954</xilinx:generationId>
+                  </xilinx:file>
+               </xilinx:fileSet>
+               <xilinx:fileSet>
+                  <xilinx:name>model_parameter_resolution_generator</xilinx:name>
+                  <xilinx:file>
+                     <xilinx:name>./c_dat_mem.mif</xilinx:name>
+                     <xilinx:userFileType>mif</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:25:08 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0xA2604D96</xilinx:checkSum>
+                     <xilinx:generationId>generationID_1767355954</xilinx:generationId>
+                  </xilinx:file>
+               </xilinx:fileSet>
+               <xilinx:fileSet>
+                  <xilinx:name>ip_xco_generator</xilinx:name>
+                  <xilinx:file>
+                     <xilinx:name>./c_dat_mem.xco</xilinx:name>
+                     <xilinx:userFileType>xco</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:25:08 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x0C37B832</xilinx:checkSum>
+                     <xilinx:generationId>generationID_1767355954</xilinx:generationId>
+                  </xilinx:file>
+               </xilinx:fileSet>
+               <xilinx:fileSet>
+                  <xilinx:name>associated_files_generator</xilinx:name>
+                  <xilinx:file>
+                     <xilinx:name>./c_dat_mem/dist_mem_gen_v7_2_readme.txt</xilinx:name>
+                     <xilinx:userFileType>ignore</xilinx:userFileType>
+                     <xilinx:userFileType>txt</xilinx:userFileType>
+                     <xilinx:timeStamp>Sat Jun 08 22:39:40 GMT 2013</xilinx:timeStamp>
+                     <xilinx:checkSum>0xA9D2F6B3</xilinx:checkSum>
+                     <xilinx:generationId>generationID_1767355954</xilinx:generationId>
+                  </xilinx:file>
+                  <xilinx:file>
+                     <xilinx:name>./c_dat_mem/doc/dist_mem_gen_v7_2_vinfo.html</xilinx:name>
+                     <xilinx:userFileType>ignore</xilinx:userFileType>
+                     <xilinx:userFileType>unknown</xilinx:userFileType>
+                     <xilinx:timeStamp>Sat Jun 08 22:39:40 GMT 2013</xilinx:timeStamp>
+                     <xilinx:checkSum>0x5191E987</xilinx:checkSum>
+                     <xilinx:generationId>generationID_1767355954</xilinx:generationId>
+                  </xilinx:file>
+               </xilinx:fileSet>
+               <xilinx:fileSet>
+                  <xilinx:name>ejava_generator</xilinx:name>
+                  <xilinx:file>
+                     <xilinx:name>./c_dat_mem/example_design/c_dat_mem_exdes.ucf</xilinx:name>
+                     <xilinx:userFileType>ignore</xilinx:userFileType>
+                     <xilinx:userFileType>ucf</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:25:09 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x4B3F39C3</xilinx:checkSum>
+                     <xilinx:generationId>generationID_1767355954</xilinx:generationId>
+                  </xilinx:file>
+                  <xilinx:file>
+                     <xilinx:name>./c_dat_mem/example_design/c_dat_mem_exdes.vhd</xilinx:name>
+                     <xilinx:userFileType>ignore</xilinx:userFileType>
+                     <xilinx:userFileType>vhdl</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:25:09 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0xCCC53FB2</xilinx:checkSum>
+                     <xilinx:generationId>generationID_1767355954</xilinx:generationId>
+                  </xilinx:file>
+                  <xilinx:file>
+                     <xilinx:name>./c_dat_mem/example_design/c_dat_mem_exdes.xdc</xilinx:name>
+                     <xilinx:userFileType>ignore</xilinx:userFileType>
+                     <xilinx:userFileType>xdc</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:25:09 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x2E83A1CC</xilinx:checkSum>
+                     <xilinx:generationId>generationID_1767355954</xilinx:generationId>
+                  </xilinx:file>
+                  <xilinx:file>
+                     <xilinx:name>./c_dat_mem/example_design/c_dat_mem_prod_exdes.vhd</xilinx:name>
+                     <xilinx:userFileType>ignore</xilinx:userFileType>
+                     <xilinx:userFileType>vhdl</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:25:09 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x9FD57226</xilinx:checkSum>
+                     <xilinx:generationId>generationID_1767355954</xilinx:generationId>
+                  </xilinx:file>
+                  <xilinx:file>
+                     <xilinx:name>./c_dat_mem/implement/implement.bat</xilinx:name>
+                     <xilinx:userFileType>ignore</xilinx:userFileType>
+                     <xilinx:userFileType>unknown</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:25:09 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0xC7EE0971</xilinx:checkSum>
+                     <xilinx:generationId>generationID_1767355954</xilinx:generationId>
+                  </xilinx:file>
+                  <xilinx:file>
+                     <xilinx:name>./c_dat_mem/implement/implement.sh</xilinx:name>
+                     <xilinx:userFileType>ignore</xilinx:userFileType>
+                     <xilinx:userFileType>unknown</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:25:09 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0xA3656E58</xilinx:checkSum>
+                     <xilinx:generationId>generationID_1767355954</xilinx:generationId>
+                  </xilinx:file>
+                  <xilinx:file>
+                     <xilinx:name>./c_dat_mem/implement/implement_synplify.bat</xilinx:name>
+                     <xilinx:userFileType>ignore</xilinx:userFileType>
+                     <xilinx:userFileType>unknown</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:25:09 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x329ECF04</xilinx:checkSum>
+                     <xilinx:generationId>generationID_1767355954</xilinx:generationId>
+                  </xilinx:file>
+                  <xilinx:file>
+                     <xilinx:name>./c_dat_mem/implement/implement_synplify.sh</xilinx:name>
+                     <xilinx:userFileType>ignore</xilinx:userFileType>
+                     <xilinx:userFileType>unknown</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:25:09 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x91859EDD</xilinx:checkSum>
+                     <xilinx:generationId>generationID_1767355954</xilinx:generationId>
+                  </xilinx:file>
+                  <xilinx:file>
+                     <xilinx:name>./c_dat_mem/implement/planAhead_ise.bat</xilinx:name>
+                     <xilinx:userFileType>ignore</xilinx:userFileType>
+                     <xilinx:userFileType>unknown</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:25:09 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x09E68494</xilinx:checkSum>
+                     <xilinx:generationId>generationID_1767355954</xilinx:generationId>
+                  </xilinx:file>
+                  <xilinx:file>
+                     <xilinx:name>./c_dat_mem/implement/planAhead_ise.sh</xilinx:name>
+                     <xilinx:userFileType>ignore</xilinx:userFileType>
+                     <xilinx:userFileType>unknown</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:25:09 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0xD100E42A</xilinx:checkSum>
+                     <xilinx:generationId>generationID_1767355954</xilinx:generationId>
+                  </xilinx:file>
+                  <xilinx:file>
+                     <xilinx:name>./c_dat_mem/implement/planAhead_ise.tcl</xilinx:name>
+                     <xilinx:userFileType>ignore</xilinx:userFileType>
+                     <xilinx:userFileType>tcl</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:25:09 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x832EB79F</xilinx:checkSum>
+                     <xilinx:generationId>generationID_1767355954</xilinx:generationId>
+                  </xilinx:file>
+                  <xilinx:file>
+                     <xilinx:name>./c_dat_mem/implement/xst.prj</xilinx:name>
+                     <xilinx:userFileType>ignore</xilinx:userFileType>
+                     <xilinx:userFileType>unknown</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:25:09 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0xE0B2103B</xilinx:checkSum>
+                     <xilinx:generationId>generationID_1767355954</xilinx:generationId>
+                  </xilinx:file>
+                  <xilinx:file>
+                     <xilinx:name>./c_dat_mem/implement/xst.scr</xilinx:name>
+                     <xilinx:userFileType>ignore</xilinx:userFileType>
+                     <xilinx:userFileType>unknown</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:25:09 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x3EAF9B7A</xilinx:checkSum>
+                     <xilinx:generationId>generationID_1767355954</xilinx:generationId>
+                  </xilinx:file>
+                  <xilinx:file>
+                     <xilinx:name>./c_dat_mem/simulation/c_dat_mem_tb.vhd</xilinx:name>
+                     <xilinx:userFileType>ignore</xilinx:userFileType>
+                     <xilinx:userFileType>vhdl</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:25:09 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x3D28EABE</xilinx:checkSum>
+                     <xilinx:generationId>generationID_1767355954</xilinx:generationId>
+                  </xilinx:file>
+                  <xilinx:file>
+                     <xilinx:name>./c_dat_mem/simulation/c_dat_mem_tb_agen.vhd</xilinx:name>
+                     <xilinx:userFileType>ignore</xilinx:userFileType>
+                     <xilinx:userFileType>vhdl</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:25:09 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0xB483DAFB</xilinx:checkSum>
+                     <xilinx:generationId>generationID_1767355954</xilinx:generationId>
+                  </xilinx:file>
+                  <xilinx:file>
+                     <xilinx:name>./c_dat_mem/simulation/c_dat_mem_tb_checker.vhd</xilinx:name>
+                     <xilinx:userFileType>ignore</xilinx:userFileType>
+                     <xilinx:userFileType>vhdl</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:25:09 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0xD7373D0A</xilinx:checkSum>
+                     <xilinx:generationId>generationID_1767355954</xilinx:generationId>
+                  </xilinx:file>
+                  <xilinx:file>
+                     <xilinx:name>./c_dat_mem/simulation/c_dat_mem_tb_dgen.vhd</xilinx:name>
+                     <xilinx:userFileType>ignore</xilinx:userFileType>
+                     <xilinx:userFileType>vhdl</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:25:09 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x8DF9A527</xilinx:checkSum>
+                     <xilinx:generationId>generationID_1767355954</xilinx:generationId>
+                  </xilinx:file>
+                  <xilinx:file>
+                     <xilinx:name>./c_dat_mem/simulation/c_dat_mem_tb_pkg.vhd</xilinx:name>
+                     <xilinx:userFileType>ignore</xilinx:userFileType>
+                     <xilinx:userFileType>vhdl</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:25:09 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0xA171E0A9</xilinx:checkSum>
+                     <xilinx:generationId>generationID_1767355954</xilinx:generationId>
+                  </xilinx:file>
+                  <xilinx:file>
+                     <xilinx:name>./c_dat_mem/simulation/c_dat_mem_tb_rng.vhd</xilinx:name>
+                     <xilinx:userFileType>ignore</xilinx:userFileType>
+                     <xilinx:userFileType>vhdl</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:25:09 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x413D55BA</xilinx:checkSum>
+                     <xilinx:generationId>generationID_1767355954</xilinx:generationId>
+                  </xilinx:file>
+                  <xilinx:file>
+                     <xilinx:name>./c_dat_mem/simulation/c_dat_mem_tb_stim_gen.vhd</xilinx:name>
+                     <xilinx:userFileType>ignore</xilinx:userFileType>
+                     <xilinx:userFileType>vhdl</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:25:09 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x21D3F45F</xilinx:checkSum>
+                     <xilinx:generationId>generationID_1767355954</xilinx:generationId>
+                  </xilinx:file>
+                  <xilinx:file>
+                     <xilinx:name>./c_dat_mem/simulation/c_dat_mem_tb_synth.vhd</xilinx:name>
+                     <xilinx:userFileType>ignore</xilinx:userFileType>
+                     <xilinx:userFileType>vhdl</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:25:09 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x3C9DF5E5</xilinx:checkSum>
+                     <xilinx:generationId>generationID_1767355954</xilinx:generationId>
+                  </xilinx:file>
+                  <xilinx:file>
+                     <xilinx:name>./c_dat_mem/simulation/functional/simulate_mti.bat</xilinx:name>
+                     <xilinx:userFileType>ignore</xilinx:userFileType>
+                     <xilinx:userFileType>unknown</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:25:09 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x28A9F7F4</xilinx:checkSum>
+                     <xilinx:generationId>generationID_1767355954</xilinx:generationId>
+                  </xilinx:file>
+                  <xilinx:file>
+                     <xilinx:name>./c_dat_mem/simulation/functional/simulate_mti.do</xilinx:name>
+                     <xilinx:userFileType>ignore</xilinx:userFileType>
+                     <xilinx:userFileType>unknown</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:25:09 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x0A4CD681</xilinx:checkSum>
+                     <xilinx:generationId>generationID_1767355954</xilinx:generationId>
+                  </xilinx:file>
+                  <xilinx:file>
+                     <xilinx:name>./c_dat_mem/simulation/functional/simulate_mti.sh</xilinx:name>
+                     <xilinx:userFileType>ignore</xilinx:userFileType>
+                     <xilinx:userFileType>unknown</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:25:09 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x5FDBD750</xilinx:checkSum>
+                     <xilinx:generationId>generationID_1767355954</xilinx:generationId>
+                  </xilinx:file>
+                  <xilinx:file>
+                     <xilinx:name>./c_dat_mem/simulation/timing/simulate_mti.bat</xilinx:name>
+                     <xilinx:userFileType>ignore</xilinx:userFileType>
+                     <xilinx:userFileType>unknown</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:25:09 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x28A9F7F4</xilinx:checkSum>
+                     <xilinx:generationId>generationID_1767355954</xilinx:generationId>
+                  </xilinx:file>
+                  <xilinx:file>
+                     <xilinx:name>./c_dat_mem/simulation/timing/simulate_mti.do</xilinx:name>
+                     <xilinx:userFileType>ignore</xilinx:userFileType>
+                     <xilinx:userFileType>unknown</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:25:09 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0xC9225814</xilinx:checkSum>
+                     <xilinx:generationId>generationID_1767355954</xilinx:generationId>
+                  </xilinx:file>
+                  <xilinx:file>
+                     <xilinx:name>./c_dat_mem/simulation/timing/simulate_mti.sh</xilinx:name>
+                     <xilinx:userFileType>ignore</xilinx:userFileType>
+                     <xilinx:userFileType>unknown</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:25:09 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x5FDBD750</xilinx:checkSum>
+                     <xilinx:generationId>generationID_1767355954</xilinx:generationId>
+                  </xilinx:file>
+               </xilinx:fileSet>
+               <xilinx:fileSet>
+                  <xilinx:name>ngc_netlist_generator</xilinx:name>
+                  <xilinx:file>
+                     <xilinx:name>./c_dat_mem.ngc</xilinx:name>
+                     <xilinx:userFileType>ngc</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:25:37 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x872B5F25</xilinx:checkSum>
+                     <xilinx:generationId>generationID_1767355954</xilinx:generationId>
+                  </xilinx:file>
+               </xilinx:fileSet>
+               <xilinx:fileSet>
+                  <xilinx:name>obfuscate_netlist_generator</xilinx:name>
+               </xilinx:fileSet>
+               <xilinx:fileSet>
+                  <xilinx:name>padded_implementation_netlist_generator</xilinx:name>
+               </xilinx:fileSet>
+               <xilinx:fileSet>
+                  <xilinx:name>instantiation_template_generator</xilinx:name>
+                  <xilinx:file>
+                     <xilinx:name>./c_dat_mem.veo</xilinx:name>
+                     <xilinx:userFileType>veo</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:25:38 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0xDC47137C</xilinx:checkSum>
+                     <xilinx:generationId>generationID_1767355954</xilinx:generationId>
+                  </xilinx:file>
+               </xilinx:fileSet>
+               <xilinx:fileSet>
+                  <xilinx:name>structural_simulation_model_generator</xilinx:name>
+                  <xilinx:file>
+                     <xilinx:name>./c_dat_mem.v</xilinx:name>
+                     <xilinx:userFileType>verilog</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:25:39 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x9B1E1929</xilinx:checkSum>
+                     <xilinx:generationId>generationID_1767355954</xilinx:generationId>
+                  </xilinx:file>
+               </xilinx:fileSet>
+               <xilinx:fileSet>
+                  <xilinx:name>all_documents_generator</xilinx:name>
+                  <xilinx:file>
+                     <xilinx:name>./c_dat_mem/doc/dist_mem_gen_v7_2_vinfo.html</xilinx:name>
+                     <xilinx:userFileType>ignore</xilinx:userFileType>
+                     <xilinx:userFileType>unknown</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:25:39 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x5191E987</xilinx:checkSum>
+                     <xilinx:generationId>generationID_1767355954</xilinx:generationId>
+                  </xilinx:file>
+                  <xilinx:file>
+                     <xilinx:name>./c_dat_mem/doc/pg063-dist-mem-gen.pdf</xilinx:name>
+                     <xilinx:userFileType>ignore</xilinx:userFileType>
+                     <xilinx:userFileType>pdf</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:25:39 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0xA7B1D402</xilinx:checkSum>
+                     <xilinx:generationId>generationID_1767355954</xilinx:generationId>
+                  </xilinx:file>
+               </xilinx:fileSet>
+               <xilinx:fileSet>
+                  <xilinx:name>asy_generator</xilinx:name>
+                  <xilinx:file>
+                     <xilinx:name>./c_dat_mem.asy</xilinx:name>
+                     <xilinx:userFileType>asy</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:25:40 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0xAFCA4E41</xilinx:checkSum>
+                     <xilinx:generationId>generationID_1767355954</xilinx:generationId>
+                  </xilinx:file>
+                  <xilinx:file>
+                     <xilinx:name>./c_dat_mem.mif</xilinx:name>
+                     <xilinx:userFileType>mif</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:25:40 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0xA2604D96</xilinx:checkSum>
+                     <xilinx:generationId>generationID_1767355954</xilinx:generationId>
+                  </xilinx:file>
+               </xilinx:fileSet>
+               <xilinx:fileSet>
+                  <xilinx:name>xmdf_generator</xilinx:name>
+                  <xilinx:file>
+                     <xilinx:name>./c_dat_mem_xmdf.tcl</xilinx:name>
+                     <xilinx:userFileType>tclXmdf</xilinx:userFileType>
+                     <xilinx:userFileType>tcl</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:25:40 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x397AC0AF</xilinx:checkSum>
+                     <xilinx:generationId>generationID_1767355954</xilinx:generationId>
+                  </xilinx:file>
+               </xilinx:fileSet>
+               <xilinx:fileSet>
+                  <xilinx:name>synthesis_ise_generator</xilinx:name>
+                  <xilinx:file>
+                     <xilinx:name>./c_dat_mem.gise</xilinx:name>
+                     <xilinx:userFileType>ignore</xilinx:userFileType>
+                     <xilinx:userFileType>gise</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:25:45 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x3CB8F8D2</xilinx:checkSum>
+                     <xilinx:generationId>generationID_1767355954</xilinx:generationId>
+                  </xilinx:file>
+                  <xilinx:file>
+                     <xilinx:name>./c_dat_mem.xise</xilinx:name>
+                     <xilinx:userFileType>ignore</xilinx:userFileType>
+                     <xilinx:userFileType>xise</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:25:45 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x78C75042</xilinx:checkSum>
+                     <xilinx:generationId>generationID_1767355954</xilinx:generationId>
+                  </xilinx:file>
+               </xilinx:fileSet>
+               <xilinx:fileSet>
+                  <xilinx:name>ise_generator</xilinx:name>
+                  <xilinx:file>
+                     <xilinx:name>./_xmsgs/pn_parser.xmsgs</xilinx:name>
+                     <xilinx:userFileType>ignore</xilinx:userFileType>
+                     <xilinx:userFileType>unknown</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:25:48 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x97A09F09</xilinx:checkSum>
+                     <xilinx:generationId>generationID_1767355954</xilinx:generationId>
+                  </xilinx:file>
+                  <xilinx:file>
+                     <xilinx:name>./c_dat_mem.gise</xilinx:name>
+                     <xilinx:userFileType>ignore</xilinx:userFileType>
+                     <xilinx:userFileType>gise</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:25:49 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x20E07D6C</xilinx:checkSum>
+                     <xilinx:generationId>generationID_1767355954</xilinx:generationId>
+                  </xilinx:file>
+                  <xilinx:file>
+                     <xilinx:name>./c_dat_mem.xise</xilinx:name>
+                     <xilinx:userFileType>ignore</xilinx:userFileType>
+                     <xilinx:userFileType>xise</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:25:49 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x1073D738</xilinx:checkSum>
+                     <xilinx:generationId>generationID_1767355954</xilinx:generationId>
+                  </xilinx:file>
+               </xilinx:fileSet>
+               <xilinx:fileSet>
+                  <xilinx:name>deliver_readme_generator</xilinx:name>
+               </xilinx:fileSet>
+               <xilinx:fileSet>
+                  <xilinx:name>flist_generator</xilinx:name>
+                  <xilinx:file>
+                     <xilinx:name>./c_dat_mem_flist.txt</xilinx:name>
+                     <xilinx:userFileType>ignore</xilinx:userFileType>
+                     <xilinx:userFileType>txtFlist</xilinx:userFileType>
+                     <xilinx:userFileType>txt</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:25:50 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x5959B322</xilinx:checkSum>
+                     <xilinx:generationId>generationID_1767355954</xilinx:generationId>
+                  </xilinx:file>
+               </xilinx:fileSet>
+               <xilinx:fileSet>
+                  <xilinx:name>view_readme_generator</xilinx:name>
+               </xilinx:fileSet>
+            </xilinx:generationHistory>
+         </spirit:vendorExtensions>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+         <spirit:instanceName>c_instr_mem</spirit:instanceName>
+         <spirit:componentRef spirit:vendor="xilinx.com" spirit:library="ip" spirit:name="dist_mem_gen" spirit:version="7.2" />
+         <spirit:configurableElementValues>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.DEPTH">32</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.DATA_WIDTH">32</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.COMPONENT_NAME">c_instr_mem</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.MEMORY_TYPE">single_port_ram</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.INPUT_OPTIONS">non_registered</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.INPUT_CLOCK_ENABLE">false</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.QUALIFY_WE_WITH_I_CE">false</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.DUAL_PORT_ADDRESS">non_registered</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.SIMPLE_DUAL_PORT_ADDRESS">non_registered</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.OUTPUT_OPTIONS">non_registered</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.PIPELINE_STAGES">0</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.COMMON_OUTPUT_CLK">false</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.SINGLE_PORT_OUTPUT_CLOCK_ENABLE">false</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.COMMON_OUTPUT_CE">false</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.DUAL_PORT_OUTPUT_CLOCK_ENABLE">false</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.SIMPLE_DUAL_PORT_OUTPUT_CLOCK_ENABLE">false</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.COEFFICIENT_FILE">Z:\Users\Adward\GitHub\Computer-Architecture\lab2\single_cpu\c_instr_mem.coe</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.DEFAULT_DATA_RADIX">16</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.DEFAULT_DATA">0</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.RESET_QSPO">false</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.RESET_QDPO">false</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.RESET_QSDPO">false</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.SYNC_RESET_QSPO">false</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.SYNC_RESET_QDPO">false</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.SYNC_RESET_QSDPO">false</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.CE_OVERRIDES">ce_overrides_sync_controls</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_FAMILY">spartan3</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_ADDR_WIDTH">5</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_DEFAULT_DATA">0</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_DEPTH">32</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_HAS_CLK">1</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_HAS_D">1</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_HAS_DPO">0</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_HAS_DPRA">0</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_HAS_I_CE">0</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_HAS_QDPO">0</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_HAS_QDPO_CE">0</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_HAS_QDPO_CLK">0</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_HAS_QDPO_RST">0</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_HAS_QDPO_SRST">0</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_HAS_QSPO">0</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_HAS_QSPO_CE">0</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_HAS_QSPO_RST">0</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_HAS_QSPO_SRST">0</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_HAS_SPO">1</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_HAS_SPRA">0</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_HAS_WE">1</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_MEM_INIT_FILE">c_instr_mem.mif</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_ELABORATION_DIR">Z:/Users/Adward/GitHub/Computer-Architecture/lab2/single_cpu/ipcore_dir/tmp/_cg/</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_MEM_TYPE">1</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_PIPELINE_STAGES">0</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_QCE_JOINED">0</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_QUALIFY_WE">0</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_READ_MIF">1</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_REG_A_D_INPUTS">0</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_REG_DPRA_INPUT">0</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_SYNC_ENABLE">1</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_WIDTH">32</spirit:configurableElementValue>
+         </spirit:configurableElementValues>
+         <spirit:vendorExtensions>
+            <xilinx:instanceProperties xmlns:xilinx="http://www.xilinx.com">
+               <xilinx:projectOptions>
+                  <xilinx:projectName>coregen</xilinx:projectName>
+                  <xilinx:outputDirectory>./</xilinx:outputDirectory>
+                  <xilinx:workingDirectory>./tmp/</xilinx:workingDirectory>
+                  <xilinx:subWorkingDirectory>./tmp/_cg/</xilinx:subWorkingDirectory>
+               </xilinx:projectOptions>
+               <xilinx:part>
+                  <xilinx:device>xc3s500e</xilinx:device>
+                  <xilinx:deviceFamily>spartan3e</xilinx:deviceFamily>
+                  <xilinx:package>fg320</xilinx:package>
+                  <xilinx:speedGrade>-4</xilinx:speedGrade>
+               </xilinx:part>
+               <xilinx:flowOptions>
+                  <xilinx:busFormat>BusFormatAngleBracketNotRipped</xilinx:busFormat>
+                  <xilinx:designEntry>Verilog</xilinx:designEntry>
+                  <xilinx:asySymbol>true</xilinx:asySymbol>
+                  <xilinx:flowVendor>Other</xilinx:flowVendor>
+                  <xilinx:addPads>false</xilinx:addPads>
+                  <xilinx:removeRPMs>false</xilinx:removeRPMs>
+                  <xilinx:createNDF>false</xilinx:createNDF>
+                  <xilinx:implementationFileType>Ngc</xilinx:implementationFileType>
+                  <xilinx:formalVerification>false</xilinx:formalVerification>
+               </xilinx:flowOptions>
+               <xilinx:simulationOptions>
+                  <xilinx:simulationModel>Behavioral</xilinx:simulationModel>
+                  <xilinx:simulationLanguage>Verilog</xilinx:simulationLanguage>
+                  <xilinx:foundationSym>false</xilinx:foundationSym>
+               </xilinx:simulationOptions>
+               <xilinx:packageInfo>
+                  <xilinx:sourceCoreCreationDate>2012-11-21+20:07</xilinx:sourceCoreCreationDate>
+               </xilinx:packageInfo>
+            </xilinx:instanceProperties>
+            <xilinx:generationHistory>
+               <xilinx:fileSet>
+                  <xilinx:name>customization_generator</xilinx:name>
+                  <xilinx:file>
+                     <xilinx:name>./c_instr_mem.mif</xilinx:name>
+                     <xilinx:userFileType>mif</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:23:52 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0xC51E2818</xilinx:checkSum>
+                     <xilinx:generationId>generationID_152152107</xilinx:generationId>
+                  </xilinx:file>
+               </xilinx:fileSet>
+               <xilinx:fileSet>
+                  <xilinx:name>model_parameter_resolution_generator</xilinx:name>
+                  <xilinx:file>
+                     <xilinx:name>./c_instr_mem.mif</xilinx:name>
+                     <xilinx:userFileType>mif</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:23:53 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0xC51E2818</xilinx:checkSum>
+                     <xilinx:generationId>generationID_152152107</xilinx:generationId>
+                  </xilinx:file>
+               </xilinx:fileSet>
+               <xilinx:fileSet>
+                  <xilinx:name>ip_xco_generator</xilinx:name>
+                  <xilinx:file>
+                     <xilinx:name>./c_instr_mem.xco</xilinx:name>
+                     <xilinx:userFileType>xco</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:23:54 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x550C39CE</xilinx:checkSum>
+                     <xilinx:generationId>generationID_152152107</xilinx:generationId>
+                  </xilinx:file>
+               </xilinx:fileSet>
+               <xilinx:fileSet>
+                  <xilinx:name>associated_files_generator</xilinx:name>
+                  <xilinx:file>
+                     <xilinx:name>./c_instr_mem/dist_mem_gen_v7_2_readme.txt</xilinx:name>
+                     <xilinx:userFileType>ignore</xilinx:userFileType>
+                     <xilinx:userFileType>txt</xilinx:userFileType>
+                     <xilinx:timeStamp>Sat Jun 08 22:39:40 GMT 2013</xilinx:timeStamp>
+                     <xilinx:checkSum>0xA9D2F6B3</xilinx:checkSum>
+                     <xilinx:generationId>generationID_152152107</xilinx:generationId>
+                  </xilinx:file>
+                  <xilinx:file>
+                     <xilinx:name>./c_instr_mem/doc/dist_mem_gen_v7_2_vinfo.html</xilinx:name>
+                     <xilinx:userFileType>ignore</xilinx:userFileType>
+                     <xilinx:userFileType>unknown</xilinx:userFileType>
+                     <xilinx:timeStamp>Sat Jun 08 22:39:40 GMT 2013</xilinx:timeStamp>
+                     <xilinx:checkSum>0x5191E987</xilinx:checkSum>
+                     <xilinx:generationId>generationID_152152107</xilinx:generationId>
+                  </xilinx:file>
+               </xilinx:fileSet>
+               <xilinx:fileSet>
+                  <xilinx:name>ejava_generator</xilinx:name>
+                  <xilinx:file>
+                     <xilinx:name>./c_instr_mem/example_design/c_instr_mem_exdes.ucf</xilinx:name>
+                     <xilinx:userFileType>ignore</xilinx:userFileType>
+                     <xilinx:userFileType>ucf</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:23:55 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x4B3F39C3</xilinx:checkSum>
+                     <xilinx:generationId>generationID_152152107</xilinx:generationId>
+                  </xilinx:file>
+                  <xilinx:file>
+                     <xilinx:name>./c_instr_mem/example_design/c_instr_mem_exdes.vhd</xilinx:name>
+                     <xilinx:userFileType>ignore</xilinx:userFileType>
+                     <xilinx:userFileType>vhdl</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:23:55 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x645237A1</xilinx:checkSum>
+                     <xilinx:generationId>generationID_152152107</xilinx:generationId>
+                  </xilinx:file>
+                  <xilinx:file>
+                     <xilinx:name>./c_instr_mem/example_design/c_instr_mem_exdes.xdc</xilinx:name>
+                     <xilinx:userFileType>ignore</xilinx:userFileType>
+                     <xilinx:userFileType>xdc</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:23:55 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x2E83A1CC</xilinx:checkSum>
+                     <xilinx:generationId>generationID_152152107</xilinx:generationId>
+                  </xilinx:file>
+                  <xilinx:file>
+                     <xilinx:name>./c_instr_mem/example_design/c_instr_mem_prod_exdes.vhd</xilinx:name>
+                     <xilinx:userFileType>ignore</xilinx:userFileType>
+                     <xilinx:userFileType>vhdl</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:23:55 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0xA5D250B1</xilinx:checkSum>
+                     <xilinx:generationId>generationID_152152107</xilinx:generationId>
+                  </xilinx:file>
+                  <xilinx:file>
+                     <xilinx:name>./c_instr_mem/implement/implement.bat</xilinx:name>
+                     <xilinx:userFileType>ignore</xilinx:userFileType>
+                     <xilinx:userFileType>unknown</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:23:55 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x65CF5E4A</xilinx:checkSum>
+                     <xilinx:generationId>generationID_152152107</xilinx:generationId>
+                  </xilinx:file>
+                  <xilinx:file>
+                     <xilinx:name>./c_instr_mem/implement/implement.sh</xilinx:name>
+                     <xilinx:userFileType>ignore</xilinx:userFileType>
+                     <xilinx:userFileType>unknown</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:23:55 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x47D42471</xilinx:checkSum>
+                     <xilinx:generationId>generationID_152152107</xilinx:generationId>
+                  </xilinx:file>
+                  <xilinx:file>
+                     <xilinx:name>./c_instr_mem/implement/implement_synplify.bat</xilinx:name>
+                     <xilinx:userFileType>ignore</xilinx:userFileType>
+                     <xilinx:userFileType>unknown</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:23:55 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x41766BE2</xilinx:checkSum>
+                     <xilinx:generationId>generationID_152152107</xilinx:generationId>
+                  </xilinx:file>
+                  <xilinx:file>
+                     <xilinx:name>./c_instr_mem/implement/implement_synplify.sh</xilinx:name>
+                     <xilinx:userFileType>ignore</xilinx:userFileType>
+                     <xilinx:userFileType>unknown</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:23:55 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x67F61B94</xilinx:checkSum>
+                     <xilinx:generationId>generationID_152152107</xilinx:generationId>
+                  </xilinx:file>
+                  <xilinx:file>
+                     <xilinx:name>./c_instr_mem/implement/planAhead_ise.bat</xilinx:name>
+                     <xilinx:userFileType>ignore</xilinx:userFileType>
+                     <xilinx:userFileType>unknown</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:23:55 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x7E00B497</xilinx:checkSum>
+                     <xilinx:generationId>generationID_152152107</xilinx:generationId>
+                  </xilinx:file>
+                  <xilinx:file>
+                     <xilinx:name>./c_instr_mem/implement/planAhead_ise.sh</xilinx:name>
+                     <xilinx:userFileType>ignore</xilinx:userFileType>
+                     <xilinx:userFileType>unknown</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:23:55 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0xFBC1CEE8</xilinx:checkSum>
+                     <xilinx:generationId>generationID_152152107</xilinx:generationId>
+                  </xilinx:file>
+                  <xilinx:file>
+                     <xilinx:name>./c_instr_mem/implement/planAhead_ise.tcl</xilinx:name>
+                     <xilinx:userFileType>ignore</xilinx:userFileType>
+                     <xilinx:userFileType>tcl</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:23:55 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0xDC5B9BBB</xilinx:checkSum>
+                     <xilinx:generationId>generationID_152152107</xilinx:generationId>
+                  </xilinx:file>
+                  <xilinx:file>
+                     <xilinx:name>./c_instr_mem/implement/xst.prj</xilinx:name>
+                     <xilinx:userFileType>ignore</xilinx:userFileType>
+                     <xilinx:userFileType>unknown</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:23:55 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x4C1BD015</xilinx:checkSum>
+                     <xilinx:generationId>generationID_152152107</xilinx:generationId>
+                  </xilinx:file>
+                  <xilinx:file>
+                     <xilinx:name>./c_instr_mem/implement/xst.scr</xilinx:name>
+                     <xilinx:userFileType>ignore</xilinx:userFileType>
+                     <xilinx:userFileType>unknown</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:23:55 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0xE8AB3D1D</xilinx:checkSum>
+                     <xilinx:generationId>generationID_152152107</xilinx:generationId>
+                  </xilinx:file>
+                  <xilinx:file>
+                     <xilinx:name>./c_instr_mem/simulation/c_instr_mem_tb.vhd</xilinx:name>
+                     <xilinx:userFileType>ignore</xilinx:userFileType>
+                     <xilinx:userFileType>vhdl</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:23:55 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x084F2F2E</xilinx:checkSum>
+                     <xilinx:generationId>generationID_152152107</xilinx:generationId>
+                  </xilinx:file>
+                  <xilinx:file>
+                     <xilinx:name>./c_instr_mem/simulation/c_instr_mem_tb_agen.vhd</xilinx:name>
+                     <xilinx:userFileType>ignore</xilinx:userFileType>
+                     <xilinx:userFileType>vhdl</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:23:55 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0xED4E77FB</xilinx:checkSum>
+                     <xilinx:generationId>generationID_152152107</xilinx:generationId>
+                  </xilinx:file>
+                  <xilinx:file>
+                     <xilinx:name>./c_instr_mem/simulation/c_instr_mem_tb_checker.vhd</xilinx:name>
+                     <xilinx:userFileType>ignore</xilinx:userFileType>
+                     <xilinx:userFileType>vhdl</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:23:55 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0xBD52E53D</xilinx:checkSum>
+                     <xilinx:generationId>generationID_152152107</xilinx:generationId>
+                  </xilinx:file>
+                  <xilinx:file>
+                     <xilinx:name>./c_instr_mem/simulation/c_instr_mem_tb_dgen.vhd</xilinx:name>
+                     <xilinx:userFileType>ignore</xilinx:userFileType>
+                     <xilinx:userFileType>vhdl</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:23:55 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x23947B88</xilinx:checkSum>
+                     <xilinx:generationId>generationID_152152107</xilinx:generationId>
+                  </xilinx:file>
+                  <xilinx:file>
+                     <xilinx:name>./c_instr_mem/simulation/c_instr_mem_tb_pkg.vhd</xilinx:name>
+                     <xilinx:userFileType>ignore</xilinx:userFileType>
+                     <xilinx:userFileType>vhdl</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:23:55 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x9FD61F1D</xilinx:checkSum>
+                     <xilinx:generationId>generationID_152152107</xilinx:generationId>
+                  </xilinx:file>
+                  <xilinx:file>
+                     <xilinx:name>./c_instr_mem/simulation/c_instr_mem_tb_rng.vhd</xilinx:name>
+                     <xilinx:userFileType>ignore</xilinx:userFileType>
+                     <xilinx:userFileType>vhdl</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:23:55 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x36357554</xilinx:checkSum>
+                     <xilinx:generationId>generationID_152152107</xilinx:generationId>
+                  </xilinx:file>
+                  <xilinx:file>
+                     <xilinx:name>./c_instr_mem/simulation/c_instr_mem_tb_stim_gen.vhd</xilinx:name>
+                     <xilinx:userFileType>ignore</xilinx:userFileType>
+                     <xilinx:userFileType>vhdl</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:23:55 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x68D9604F</xilinx:checkSum>
+                     <xilinx:generationId>generationID_152152107</xilinx:generationId>
+                  </xilinx:file>
+                  <xilinx:file>
+                     <xilinx:name>./c_instr_mem/simulation/c_instr_mem_tb_synth.vhd</xilinx:name>
+                     <xilinx:userFileType>ignore</xilinx:userFileType>
+                     <xilinx:userFileType>vhdl</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:23:55 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x9449579F</xilinx:checkSum>
+                     <xilinx:generationId>generationID_152152107</xilinx:generationId>
+                  </xilinx:file>
+                  <xilinx:file>
+                     <xilinx:name>./c_instr_mem/simulation/functional/simulate_mti.bat</xilinx:name>
+                     <xilinx:userFileType>ignore</xilinx:userFileType>
+                     <xilinx:userFileType>unknown</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:23:55 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x28A9F7F4</xilinx:checkSum>
+                     <xilinx:generationId>generationID_152152107</xilinx:generationId>
+                  </xilinx:file>
+                  <xilinx:file>
+                     <xilinx:name>./c_instr_mem/simulation/functional/simulate_mti.do</xilinx:name>
+                     <xilinx:userFileType>ignore</xilinx:userFileType>
+                     <xilinx:userFileType>unknown</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:23:55 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0xBCDB1E89</xilinx:checkSum>
+                     <xilinx:generationId>generationID_152152107</xilinx:generationId>
+                  </xilinx:file>
+                  <xilinx:file>
+                     <xilinx:name>./c_instr_mem/simulation/functional/simulate_mti.sh</xilinx:name>
+                     <xilinx:userFileType>ignore</xilinx:userFileType>
+                     <xilinx:userFileType>unknown</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:23:55 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x5FDBD750</xilinx:checkSum>
+                     <xilinx:generationId>generationID_152152107</xilinx:generationId>
+                  </xilinx:file>
+                  <xilinx:file>
+                     <xilinx:name>./c_instr_mem/simulation/timing/simulate_mti.bat</xilinx:name>
+                     <xilinx:userFileType>ignore</xilinx:userFileType>
+                     <xilinx:userFileType>unknown</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:23:55 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x28A9F7F4</xilinx:checkSum>
+                     <xilinx:generationId>generationID_152152107</xilinx:generationId>
+                  </xilinx:file>
+                  <xilinx:file>
+                     <xilinx:name>./c_instr_mem/simulation/timing/simulate_mti.do</xilinx:name>
+                     <xilinx:userFileType>ignore</xilinx:userFileType>
+                     <xilinx:userFileType>unknown</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:23:55 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x7C5D5CA5</xilinx:checkSum>
+                     <xilinx:generationId>generationID_152152107</xilinx:generationId>
+                  </xilinx:file>
+                  <xilinx:file>
+                     <xilinx:name>./c_instr_mem/simulation/timing/simulate_mti.sh</xilinx:name>
+                     <xilinx:userFileType>ignore</xilinx:userFileType>
+                     <xilinx:userFileType>unknown</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:23:55 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x5FDBD750</xilinx:checkSum>
+                     <xilinx:generationId>generationID_152152107</xilinx:generationId>
+                  </xilinx:file>
+               </xilinx:fileSet>
+               <xilinx:fileSet>
+                  <xilinx:name>ngc_netlist_generator</xilinx:name>
+                  <xilinx:file>
+                     <xilinx:name>./c_instr_mem.ngc</xilinx:name>
+                     <xilinx:userFileType>ngc</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:24:25 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x2797F88E</xilinx:checkSum>
+                     <xilinx:generationId>generationID_152152107</xilinx:generationId>
+                  </xilinx:file>
+               </xilinx:fileSet>
+               <xilinx:fileSet>
+                  <xilinx:name>obfuscate_netlist_generator</xilinx:name>
+               </xilinx:fileSet>
+               <xilinx:fileSet>
+                  <xilinx:name>padded_implementation_netlist_generator</xilinx:name>
+               </xilinx:fileSet>
+               <xilinx:fileSet>
+                  <xilinx:name>instantiation_template_generator</xilinx:name>
+                  <xilinx:file>
+                     <xilinx:name>./c_instr_mem.veo</xilinx:name>
+                     <xilinx:userFileType>veo</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:24:27 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0xE2C1538C</xilinx:checkSum>
+                     <xilinx:generationId>generationID_152152107</xilinx:generationId>
+                  </xilinx:file>
+               </xilinx:fileSet>
+               <xilinx:fileSet>
+                  <xilinx:name>structural_simulation_model_generator</xilinx:name>
+                  <xilinx:file>
+                     <xilinx:name>./c_instr_mem.v</xilinx:name>
+                     <xilinx:userFileType>verilog</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:24:27 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x3C92A904</xilinx:checkSum>
+                     <xilinx:generationId>generationID_152152107</xilinx:generationId>
+                  </xilinx:file>
+               </xilinx:fileSet>
+               <xilinx:fileSet>
+                  <xilinx:name>all_documents_generator</xilinx:name>
+                  <xilinx:file>
+                     <xilinx:name>./c_instr_mem/doc/dist_mem_gen_v7_2_vinfo.html</xilinx:name>
+                     <xilinx:userFileType>ignore</xilinx:userFileType>
+                     <xilinx:userFileType>unknown</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:24:27 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x5191E987</xilinx:checkSum>
+                     <xilinx:generationId>generationID_152152107</xilinx:generationId>
+                  </xilinx:file>
+                  <xilinx:file>
+                     <xilinx:name>./c_instr_mem/doc/pg063-dist-mem-gen.pdf</xilinx:name>
+                     <xilinx:userFileType>ignore</xilinx:userFileType>
+                     <xilinx:userFileType>pdf</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:24:27 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0xA7B1D402</xilinx:checkSum>
+                     <xilinx:generationId>generationID_152152107</xilinx:generationId>
+                  </xilinx:file>
+               </xilinx:fileSet>
+               <xilinx:fileSet>
+                  <xilinx:name>asy_generator</xilinx:name>
+                  <xilinx:file>
+                     <xilinx:name>./c_instr_mem.asy</xilinx:name>
+                     <xilinx:userFileType>asy</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:24:28 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x36601E2F</xilinx:checkSum>
+                     <xilinx:generationId>generationID_152152107</xilinx:generationId>
+                  </xilinx:file>
+                  <xilinx:file>
+                     <xilinx:name>./c_instr_mem.mif</xilinx:name>
+                     <xilinx:userFileType>mif</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:24:28 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0xC51E2818</xilinx:checkSum>
+                     <xilinx:generationId>generationID_152152107</xilinx:generationId>
+                  </xilinx:file>
+               </xilinx:fileSet>
+               <xilinx:fileSet>
+                  <xilinx:name>xmdf_generator</xilinx:name>
+                  <xilinx:file>
+                     <xilinx:name>./c_instr_mem_xmdf.tcl</xilinx:name>
+                     <xilinx:userFileType>tclXmdf</xilinx:userFileType>
+                     <xilinx:userFileType>tcl</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:24:28 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x18871D54</xilinx:checkSum>
+                     <xilinx:generationId>generationID_152152107</xilinx:generationId>
+                  </xilinx:file>
+               </xilinx:fileSet>
+               <xilinx:fileSet>
+                  <xilinx:name>synthesis_ise_generator</xilinx:name>
+                  <xilinx:file>
+                     <xilinx:name>./c_instr_mem.gise</xilinx:name>
+                     <xilinx:userFileType>ignore</xilinx:userFileType>
+                     <xilinx:userFileType>gise</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:24:33 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0xA3534E7C</xilinx:checkSum>
+                     <xilinx:generationId>generationID_152152107</xilinx:generationId>
+                  </xilinx:file>
+                  <xilinx:file>
+                     <xilinx:name>./c_instr_mem.xise</xilinx:name>
+                     <xilinx:userFileType>ignore</xilinx:userFileType>
+                     <xilinx:userFileType>xise</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:24:33 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x0565AAE8</xilinx:checkSum>
+                     <xilinx:generationId>generationID_152152107</xilinx:generationId>
+                  </xilinx:file>
+               </xilinx:fileSet>
+               <xilinx:fileSet>
+                  <xilinx:name>ise_generator</xilinx:name>
+                  <xilinx:file>
+                     <xilinx:name>./_xmsgs/pn_parser.xmsgs</xilinx:name>
+                     <xilinx:userFileType>ignore</xilinx:userFileType>
+                     <xilinx:userFileType>unknown</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:24:36 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0xB510684B</xilinx:checkSum>
+                     <xilinx:generationId>generationID_152152107</xilinx:generationId>
+                  </xilinx:file>
+                  <xilinx:file>
+                     <xilinx:name>./c_instr_mem.gise</xilinx:name>
+                     <xilinx:userFileType>ignore</xilinx:userFileType>
+                     <xilinx:userFileType>gise</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:24:37 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x09ECED0F</xilinx:checkSum>
+                     <xilinx:generationId>generationID_152152107</xilinx:generationId>
+                  </xilinx:file>
+                  <xilinx:file>
+                     <xilinx:name>./c_instr_mem.xise</xilinx:name>
+                     <xilinx:userFileType>ignore</xilinx:userFileType>
+                     <xilinx:userFileType>xise</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:24:37 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0xA93AC4F1</xilinx:checkSum>
+                     <xilinx:generationId>generationID_152152107</xilinx:generationId>
+                  </xilinx:file>
+               </xilinx:fileSet>
+               <xilinx:fileSet>
+                  <xilinx:name>deliver_readme_generator</xilinx:name>
+               </xilinx:fileSet>
+               <xilinx:fileSet>
+                  <xilinx:name>flist_generator</xilinx:name>
+                  <xilinx:file>
+                     <xilinx:name>./c_instr_mem_flist.txt</xilinx:name>
+                     <xilinx:userFileType>ignore</xilinx:userFileType>
+                     <xilinx:userFileType>txtFlist</xilinx:userFileType>
+                     <xilinx:userFileType>txt</xilinx:userFileType>
+                     <xilinx:timeStamp>Mon Apr 06 11:24:37 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x96F22B19</xilinx:checkSum>
+                     <xilinx:generationId>generationID_152152107</xilinx:generationId>
+                  </xilinx:file>
+               </xilinx:fileSet>
+               <xilinx:fileSet>
+                  <xilinx:name>view_readme_generator</xilinx:name>
+               </xilinx:fileSet>
+            </xilinx:generationHistory>
+         </spirit:vendorExtensions>
+      </spirit:componentInstance>
+   </spirit:componentInstances>
+   <spirit:vendorExtensions>
+      <xilinx:instanceProperties>
+         <xilinx:projectOptions>
+            <xilinx:projectName>coregen</xilinx:projectName>
+            <xilinx:outputDirectory>./</xilinx:outputDirectory>
+            <xilinx:workingDirectory>./tmp/</xilinx:workingDirectory>
+            <xilinx:subWorkingDirectory>./tmp/_cg/</xilinx:subWorkingDirectory>
+         </xilinx:projectOptions>
+         <xilinx:part>
+            <xilinx:device>xc3s500e</xilinx:device>
+            <xilinx:deviceFamily>spartan3e</xilinx:deviceFamily>
+            <xilinx:package>fg320</xilinx:package>
+            <xilinx:speedGrade>-4</xilinx:speedGrade>
+         </xilinx:part>
+         <xilinx:flowOptions>
+            <xilinx:busFormat>BusFormatAngleBracketNotRipped</xilinx:busFormat>
+            <xilinx:designEntry>Verilog</xilinx:designEntry>
+            <xilinx:asySymbol>true</xilinx:asySymbol>
+            <xilinx:flowVendor>Other</xilinx:flowVendor>
+            <xilinx:addPads>false</xilinx:addPads>
+            <xilinx:removeRPMs>false</xilinx:removeRPMs>
+            <xilinx:createNDF>false</xilinx:createNDF>
+            <xilinx:implementationFileType>Ngc</xilinx:implementationFileType>
+            <xilinx:formalVerification>false</xilinx:formalVerification>
+         </xilinx:flowOptions>
+         <xilinx:simulationOptions>
+            <xilinx:simulationModel>Behavioral</xilinx:simulationModel>
+            <xilinx:simulationLanguage>Verilog</xilinx:simulationLanguage>
+            <xilinx:foundationSym>false</xilinx:foundationSym>
+         </xilinx:simulationOptions>
+      </xilinx:instanceProperties>
+   </spirit:vendorExtensions>
+</spirit:design>
+
