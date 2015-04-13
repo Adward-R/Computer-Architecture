@@ -18,7 +18,6 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-	
 module ctrl(clk, rst, ir_data, zero,
 	write_pc, iord, write_mem, write_dr, write_ir, memtoreg, regdst, 
 	pcsource, write_c, alu_ctrl, alu_srcA, alu_srcB, write_a, write_b, write_reg,
@@ -37,7 +36,7 @@ module ctrl(clk, rst, ir_data, zero,
 		LED_SU = 4'b0100, LED_AN = 4'b0101, LED_NO = 4'b0110,
 		LED_JP = 4'b0111, LED_NI = 4'b0000;  									
 	
-	parameter STAGE_IF = 3'b000, STAGE_ID = 3'b001, STAGE_EXE = 010,
+	parameter STAGE_IF = 3'b000, STAGE_ID = 3'b001, STAGE_EXE =3'b010,
 		STAGE_WB = 3'b100, STAGE_MEM = 3'b011;
 	
 		// input signals
@@ -69,7 +68,7 @@ module ctrl(clk, rst, ir_data, zero,
 	reg [3:0]  state;
 	reg [3:0]  insn_type;
 	reg [3:0]  insn_code;
-	reg [2:0]  insn_stage; //£¿
+	reg [2:0]  insn_stage;
 	reg		  write_pc;
 	reg        iord;
 	reg		  write_mem;
@@ -102,14 +101,30 @@ module ctrl(clk, rst, ir_data, zero,
 		write_a <= 1'b0;
 		write_b <= 1'b0;
 		write_reg <= 1'b0;
+		iord <= 1'b0;
 	end
 	
 	always @ (posedge clk or posedge rst)
 	begin	
 		if (rst == 1)
 		begin
-			state <= IF; 
+			iord <= 1'b0;
+			state <=IF; 
 			insn_stage <= STAGE_IF;
+			write_pc <= 1'b0;
+			write_mem <= 1'b0;
+			write_dr <= 1'b0;
+			write_ir <= 1'b0;
+			memtoreg <= 1'b0;
+			regdst <= 1'b0;
+			pcsource <= 2'b00;
+			write_c <= 1'b0;
+			alu_ctrl <= 2'b00;
+			alu_srcA <= 1'b0;
+			alu_srcB <= 2'b01;
+			write_a <= 1'b0;
+			write_b <= 1'b0;
+			write_reg <= 1'b0;
 		end
 		else 
 	   case (state)
@@ -123,7 +138,7 @@ module ctrl(clk, rst, ir_data, zero,
 				pcsource <= 2'b00;
 				
 				state <= ID;
-				insn_stage <= STAGE_ID;
+				insn_stage <= STAGE_ID ;
 			end
 			
 			ID:
@@ -145,29 +160,29 @@ module ctrl(clk, rst, ir_data, zero,
 					end
 					6'b000010:    // Jump insn
 					begin
-						state <= IF;
-						insn_stage <= STAGE_IF;
+						state <= EX_J ;
+						insn_stage <=STAGE_EXE;
 						pcsource <= 2'b10;
 					end
 					6'b000100:    // Beq  insn
 					begin
-						state <= EX_BEQ; //?
-						insn_stage <= STAGE_EXE;
+						state <=EX_BEQ;
+						insn_stage <=STAGE_EXE;
 					end
 					6'b100011:   //Load
 					begin
-						state <= EX_LD;
-						insn_stage <= STAGE_EXE;
+						state <=EX_LD;
+						insn_stage <=STAGE_EXE;
 					end
 					6'b101011:   // Store
 					begin
-						state <= EX_ST;
-						insn_stage <= STAGE_EXE;
+						state <=EX_ST;
+						insn_stage <=STAGE_EXE;
 					end
 					default: 
 					begin
-					state <= EX_R;
-					insn_stage <= STAGE_EXE;
+					state <=EX_R;
+					insn_stage <=STAGE_EXE;
 					end
 				endcase
 			end
@@ -187,8 +202,8 @@ module ctrl(clk, rst, ir_data, zero,
 					6'b100111: alu_ctrl <= NOR;
 					default:   alu_ctrl <= ADD;
 				endcase
-				state <= WB_R;
-				insn_stage <= STAGE_WB;
+				state <=WB_R;
+				insn_stage <=STAGE_WB;//////////////////////////////////////////
 				
 				memtoreg <= 1'b0;
 				write_reg <= 1'b1;
@@ -199,7 +214,7 @@ module ctrl(clk, rst, ir_data, zero,
 			begin
 				write_c <= 1'b0;
 				
-				state <= IF;
+				state <=IF;
 				insn_stage <= STAGE_IF;
 				iord <= 1'b0;
 				alu_srcA <= 1'b0;
@@ -215,7 +230,8 @@ module ctrl(clk, rst, ir_data, zero,
 			write_a <= 1'b0;
 			write_b <= 1'b0;
 			
-		 	iord <= 1'b1; 
+		 	
+			iord <= 1'b1; 
 			alu_srcA <= 1'b1;
 			alu_srcB <= 2'b10;
 			alu_ctrl <= ADD;
@@ -230,7 +246,7 @@ module ctrl(clk, rst, ir_data, zero,
 				write_c <= 1'b0;
 				
 				write_dr <= 1'b1;
-				state <= WB_LS;
+				state <=WB_LS;
 				insn_stage <= STAGE_WB;
 				
 				write_reg <= 1'b1;
@@ -242,7 +258,7 @@ module ctrl(clk, rst, ir_data, zero,
 			begin
 				write_dr <= 1'b0;
 				
-				state <= IF;
+				state <=IF;
 				insn_stage <= STAGE_IF;
 				iord <= 1'b0;
 				alu_srcA <= 1'b0;
@@ -275,7 +291,7 @@ module ctrl(clk, rst, ir_data, zero,
 		 	//	iord <= 1'b1;
 				write_c <= 1'b0;
 
-				state <= IF; 
+				state <=IF; 
 				insn_stage <= STAGE_IF;
 				iord <= 1'b0;
 				alu_srcA <= 1'b0;
@@ -283,18 +299,18 @@ module ctrl(clk, rst, ir_data, zero,
 				alu_ctrl <= ADD;
 			end
 			
-			EX_J: //?
+			EX_J:
 			begin
 			   write_a <= 1'b0;
 				write_b <= 1'b0;
 				write_c <= 1'b0;
 				
 				write_pc <= 1'b1;
-				state <= IF; 
+				state <=IF; 
 				insn_stage <= STAGE_IF;
 			end
 			
-			EX_BEQ: //?
+			EX_BEQ:
 			begin
 				write_a <= 1'b0;
 				write_b <= 1'b0;
@@ -305,8 +321,8 @@ module ctrl(clk, rst, ir_data, zero,
 				alu_ctrl <= SUB;
 				pcsource <= 2'b01;
 				write_pc <= zero;
-				state <= IF; 
-				insn_stage <= STAGE_IF;
+				state <=IF; 
+				insn_stage <=STAGE_IF ;
 				iord <= 1'b0;
 				alu_srcA <= 1'b0;
 				alu_srcB <= 2'b01;
@@ -360,3 +376,4 @@ module ctrl(clk, rst, ir_data, zero,
 			end
 		endcase
 endmodule
+
