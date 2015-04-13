@@ -63,9 +63,9 @@ module top(input wire CCLK, BTN3_IN, BTN2_IN,
 	reg  [31:0]   b_data;
 	reg  [31:0]   c_data;
 	
-	//clock C1 (CCLK, 25000, clk0);
-	pbdebounce M1(clk, BTN2_IN, BTN2);
-	pbdebounce M2(clk, BTN3_IN, BTN3);
+	clock C1 (CCLK, 25000, clk0);
+	pbdebounce M1(clk0, BTN2_IN, BTN2);
+	pbdebounce M2(clk0, BTN3_IN, BTN3);
 	
 	assign raddr = iord ? c_data[31:0] : pc;
 	assign waddr = c_data[31:0];
@@ -100,43 +100,65 @@ module top(input wire CCLK, BTN3_IN, BTN2_IN,
 	display M0 (CCLK, cls, strdata, rslcd, rwlcd, elcd, lcdd);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
 
 	always @(CCLK) begin
-		if ((BTN3 == 1'b1) || (mem_data != mem_data_old) || (pc != pc_old) || (raddr != raddr_old) || (waddr != waddr_old)) begin
-			strdata[255:248] = 8'h30 + mem_data[31:28];
-			strdata[247:240] = 8'h30 + mem_data[27:24];
-			strdata[239:232] = 8'h30 + mem_data[23:20];
-			strdata[231:224] = 8'h30 + mem_data[19:16];
-			strdata[223:216] = 8'h30 + mem_data[15:12];
-			strdata[215:208] = 8'h30 + mem_data[11:8];
-			strdata[207:200] = 8'h30 + mem_data[7:4];
-			strdata[199:192] = 8'h30 + mem_data[3:0];
-			//space
-			//strdata[191:184] = " ";
-			//2 4-bit raddr
-			strdata[183:176] = 8'h30 + raddr[7:4];
-			strdata[175:168] = 8'h30 + raddr[3:0];
-			//space
-			//strdata[167:160] = " ";
-			//2 4-bit waddr
-			strdata[159:152] = 8'h30 + waddr[7:4];
-			strdata[151:144] = 8'h30 + waddr[3:0];
-			
-			//secondline
-			strdata[127:120] = 8'h30 + state_out;
-			//space
-			strdata[111:104] = 8'h30 + insn_type;
-			//space
-			strdata[95:88] = 8'h30 + insn_code;
-			//space
-			//2 4-bit pc
-			strdata[79:72] = 8'h30 + pc[7:4];
-			strdata[71:64] = 8'h30 + pc[3:0];
+		if ((BTN3 == 1'b1) 
+			|| (mem_data != mem_data_old) 
+			|| (pc != pc_old) 
+			|| (raddr != raddr_old) 
+			|| (waddr != waddr_old)) begin
+				if (mem_data[31:28] > 9) strdata[255:248] = 8'h37 + mem_data[31:28];
+				else strdata[255:248] = 8'h30 + mem_data[31:28];
+				if(mem_data[27:24] > 9) strdata[247:240] = 8'h37 + mem_data[27:24];	
+				else strdata[247:240] = 8'h30 + mem_data[27:24];
+				if(mem_data[23:20] > 9) strdata[239:232] = 8'h37 + mem_data[23:20];	
+				else strdata[239:232] = 8'h30 + mem_data[23:20];
+				if(mem_data[19:16] > 9) strdata[231:224] = 8'h37 + mem_data[19:16];	
+				else strdata[231:224] = 8'h30 + mem_data[19:16];
+				if(mem_data[15:12] > 9) strdata[223:216] = 8'h37 + mem_data[15:12];	
+				else strdata[223:216] = 8'h30 + mem_data[15:12];
+				if(mem_data[11:8] > 9) strdata[215:208] = 8'h37 + mem_data[11:8];	
+				else strdata[215:208] = 8'h30 + mem_data[11:8];
+				if(mem_data[7:4] > 9) strdata[207:200] = 8'h37 + mem_data[7:4];	
+				else strdata[207:200] = 8'h30 + mem_data[7:4];
+				if(mem_data[3:0] > 9) strdata[199:192] = 8'h37 + mem_data[3:0];	
+				else strdata[199:192] = 8'h30 + mem_data[3:0];
 
-			cls = 1;
+				//space
+				//strdata[191:184] = " ";
+				//2 4-bit raddr
+				if(raddr[7:4]>9) strdata[183:176] = 8'h37 + raddr[7:4]; 
+				else strdata[183:176] = 8'h30 + raddr[7:4];
+				if(raddr[3:0]>9) strdata[175:168] = 8'h37 + raddr[3:0]; 
+				else strdata[175:168] = 8'h30 + raddr[3:0];		
+				//strdata[167:160] = " ";
+				//2 4-bit waddr
+				if(waddr[7:4]>9) strdata[159:152] = 8'h37 + waddr[7:4]; 
+				else strdata[159:152] = 8'h30 + waddr[7:4];
+				if(waddr[3:0]>9) strdata[151:144] = 8'h37 + waddr[3:0]; 
+				else strdata[151:144] = 8'h30 + waddr[3:0];
 			
-			pc_old <= pc;
-			mem_data_old <= mem_data;
-			raddr_old <= raddr;
-			waddr_old <= waddr;
+				//secondline
+				if(state_out>9) strdata[127:120] = 8'h37 + state_out;
+				else strdata[127:120] = 8'h30 + state_out;
+
+				//space
+				if(insn_type>9) strdata[111:104] = 8'h37 + insn_type; 
+				else strdata[111:104] = 8'h30 + insn_type;
+				//space
+				if(insn_code>9) strdata[95:88] = 8'h37 + insn_code; 
+				else strdata[95:88] = 8'h30 + insn_code;
+				//space
+				//2 4-bit pc
+				if(pc[7:4]>9) strdata[79:72] = 8'h37 + pc[7:4];
+				else strdata[79:72] = 8'h30 + pc[7:4];
+				if(pc[3:0]>9) strdata[71:64] = 8'h37 + pc[3:0]; 
+				else strdata[71:64] = 8'h30 + pc[3:0];
+
+				cls = 1;
+			
+				pc_old <= pc;
+				mem_data_old <= mem_data;
+				raddr_old <= raddr;
+				waddr_old <= waddr;
 		end
 		else
 			cls = 0;

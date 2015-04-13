@@ -32,7 +32,7 @@ module reg_wrapper(clk, rst, ir_data, dr_data, c_data, memtoreg, regdst, write_r
 	output [31:0]	rdata_B;
 	output [6:0]	r6out;
 	
-	wire [4:0]		rs;
+	wire [4:0]		rs;	
 	wire [4:0]		rt;
 	wire [4:0]		rd;
 	wire [4:0]		nd;
