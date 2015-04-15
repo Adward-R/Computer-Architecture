@@ -3,7 +3,7 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date:    18:05:39 04/11/2015 
+// Create Date:    18:30:27 03/30/2014 
 // Design Name: 
 // Module Name:    reg_wrapper 
 // Project Name: 
@@ -30,9 +30,9 @@ module reg_wrapper(clk, rst, ir_data, dr_data, c_data, memtoreg, regdst, write_r
 	input				write_reg;
 	output [31:0]	rdata_A;
 	output [31:0]	rdata_B;
-	output [6:0]	r6out;
+	output [7:0]	r6out;
 	
-	wire [4:0]		rs;	
+	wire [4:0]		rs;
 	wire [4:0]		rt;
 	wire [4:0]		rd;
 	wire [4:0]		nd;
@@ -68,7 +68,7 @@ module regs(clk, rst, rnum_A, rnum_B, wnum, wdata, we, rdata_A, rdata_B, r6out);
 	input        we;
 	output [31:0] rdata_A;
 	output [31:0] rdata_B;
-   output [6:0] r6out;
+   output [7:0] r6out;
 	wire         clk;
 	wire         rst;
 	wire [4:0]   rnum_A;
@@ -184,4 +184,3 @@ module regs(clk, rst, rnum_A, rnum_B, wnum, wdata, we, rdata_A, rdata_B, r6out);
 	  end
 	end
 endmodule
-

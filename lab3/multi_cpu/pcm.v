@@ -3,7 +3,7 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date:    18:10:53 04/11/2015 
+// Create Date:    18:31:00 03/30/2014 
 // Design Name: 
 // Module Name:    pcm 
 // Project Name: 
@@ -18,7 +18,6 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-
 module pcm(clk, rst, alu_out, c_data, ir_data, pcsource, write_pc, pc);
 	
 	input         	clk;
@@ -41,9 +40,9 @@ module pcm(clk, rst, alu_out, c_data, ir_data, pcsource, write_pc, pc);
 	end
 	
 	assign addr = {pc[31:26], ir_data[25:0]};
- 	assign npc = (pcsource == 2'b00)? alu_out : ((pcsource == 2'b01)? c_data : addr);
+ 	assign npc = rst?32'h00000000: ((pcsource == 2'b00)? alu_out : ((pcsource == 2'b01)? c_data : addr));
 	
-	always @ (posedge write_pc) begin
+	always @ (posedge write_pc or posedge rst) begin
 		pc <= npc;
 		if (rst) begin
 			pc <= 32'h00000000;
