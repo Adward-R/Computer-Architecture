@@ -165,8 +165,8 @@ module top(input wire CCLK, BTN3_IN, BTN2_IN,
 	end
 
 	memory x_memory(
-		.addra(raddr),
-		.addrb(waddr),
+		.addrb(raddr),
+		.addra(waddr),
 		.clka(clk),
 		.clkb(clk),
 		.dina(b_data),
