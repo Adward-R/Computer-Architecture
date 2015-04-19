@@ -18,10 +18,12 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module top(input wire CCLK, BTN3_IN, BTN2_IN, 
+module top(input wire CCLK, BTN3_IN, BTN2_IN,
+				input wire [3:0] SW,
 				output wire [7:0]LED, 
 				output wire LCDE, LCDRS, LCDRW, 
 				output wire [3:0]LCDDAT);
+	
 	wire          clk_1ms;
 	wire          clk;
 	wire          rst;         
@@ -62,6 +64,7 @@ module top(input wire CCLK, BTN3_IN, BTN2_IN,
 	reg  [31:0]   a_data;
 	reg  [31:0]   b_data;
 	reg  [31:0]   c_data;
+	wire [31:0] sout;
 	
 	clock C1 (CCLK, 25000, clk0);
 	pbdebounce M1(clk0, BTN2_IN, BTN2);
@@ -152,6 +155,24 @@ module top(input wire CCLK, BTN3_IN, BTN2_IN,
 				else strdata[79:72] = 8'h30 + pc[7:4];
 				if(pc[3:0]>9) strdata[71:64] = 8'h37 + pc[3:0]; 
 				else strdata[71:64] = 8'h30 + pc[3:0];
+				//
+				if (sout[31:28]>9) strdata[63:56] = 8'h37 + sout[31:28];
+				else strdata[63:56] = 8'h30 + sout[31:28];
+				if (sout[27:24]>9) strdata[55:48] = 8'h37 + sout[27:24];
+				else strdata[55:48] = 8'h30 + sout[27:24];
+				if (sout[23:20]>9) strdata[47:40] = 8'h37 + sout[23:20];
+				else strdata[47:40] = 8'h30 + sout[23:20];
+				if (sout[19:16]>9) strdata[39:32] = 8'h37 + sout[19:16];
+				else strdata[39:32] = 8'h30 + sout[19:16];
+				if (sout[15:12]>9) strdata[31:24] = 8'h37 + sout[15:12];
+				else strdata[31:24] = 8'h30 + sout[15:12];
+				if (sout[11:8]>9) strdata[23:16] = 8'h37 + sout[11:8];
+				else strdata[23:16] = 8'h30 + sout[11:8];
+				if (sout[7:4]>9) strdata[15:8] = 8'h37 + sout[7:4];
+				else strdata[15:8] = 8'h30 + sout[7:4];
+				if (sout[3:0]>9) strdata[7:0] = 8'h37 + sout[3:0];
+				else strdata[7:0] = 8'h30 + sout[3:0];
+				//
 
 				cls = 1;
 			
@@ -191,7 +212,7 @@ module top(input wire CCLK, BTN3_IN, BTN2_IN,
 	end
 	
 	reg_wrapper x_reg_wrapper(clk, rst, ir_data, dr_data, c_data, memtoreg, regdst, write_reg,
-										 rdata_A, rdata_B, r6out); 
+										 rdata_A, rdata_B, r6out, sout, SW); 
 
 	always @(write_a) begin
  		if (write_a)

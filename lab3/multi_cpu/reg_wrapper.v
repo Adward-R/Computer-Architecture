@@ -19,7 +19,7 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module reg_wrapper(clk, rst, ir_data, dr_data, c_data, memtoreg, regdst, write_reg,
-						rdata_A, rdata_B, r6out);
+						rdata_A, rdata_B, r6out, sout, SW);
 	input         	clk;
 	input				rst;
 	input	[31:0]  	ir_data;
@@ -28,9 +28,11 @@ module reg_wrapper(clk, rst, ir_data, dr_data, c_data, memtoreg, regdst, write_r
 	input				memtoreg;
 	input				regdst;
 	input				write_reg;
+	input [3:0] 	SW;
 	output [31:0]	rdata_A;
 	output [31:0]	rdata_B;
 	output [7:0]	r6out;
+	output wire [31:0]  sout;
 	
 	wire [4:0]		rs;
 	wire [4:0]		rt;
@@ -53,12 +55,14 @@ module reg_wrapper(clk, rst, ir_data, dr_data, c_data, memtoreg, regdst, write_r
 					  .we(write_reg),
 					  .rdata_A(rdata_A),
 					  .rdata_B(rdata_B),
-					  .r6out(r6out));
+					  .r6out(r6out),
+					  .sout(sout),
+					  .SW(SW));
 
 endmodule
 
 //regs module
-module regs(clk, rst, rnum_A, rnum_B, wnum, wdata, we, rdata_A, rdata_B, r6out);
+module regs(clk, rst, rnum_A, rnum_B, wnum, wdata, we, rdata_A, rdata_B, r6out,sout,SW);
     input        clk;
 	input        rst;
 	input [4:0]  rnum_A;
@@ -66,9 +70,11 @@ module regs(clk, rst, rnum_A, rnum_B, wnum, wdata, we, rdata_A, rdata_B, r6out);
 	input [4:0]  wnum;
 	input [31:0] wdata;
 	input        we;
+	input [3:0] SW;
 	output [31:0] rdata_A;
 	output [31:0] rdata_B;
    output [7:0] r6out;
+	output reg [3:0] sout;
 	wire         clk;
 	wire         rst;
 	wire [4:0]   rnum_A;
@@ -180,6 +186,26 @@ module regs(clk, rst, rnum_A, rnum_B, wnum, wdata, we, rdata_A, rdata_B, r6out);
 			 5'b01110: rdata_B <= r14;
 			 5'b01111: rdata_B <= r15;
 			 default:  rdata_B <= r0;
+		 endcase
+		 
+		 case(SW)
+		    4'b0000: sout <= r0;
+			 4'b0001: sout <= r1;
+			 4'b0010: sout <= r2;
+			 4'b0011: sout <= r3;
+			 4'b0100: sout <= r4;
+			 4'b0101: sout <= r5;
+			 4'b0110: sout <= r6;
+			 4'b0111: sout <= r7;
+			 4'b1000: sout <= r8;
+			 4'b1001: sout <= r9;
+			 4'b1010: sout <= r10;
+			 4'b1011: sout <= r11;
+			 4'b1100: sout <= r12;
+			 4'b1101: sout <= r13;
+			 4'b1110: sout <= r14;
+			 4'b1111: sout <= r15;
+			 default:  sout <= r0;
 		 endcase
 	  end
 	end
