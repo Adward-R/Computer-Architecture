@@ -57,14 +57,13 @@ module top(input wire CCLK, BTN3_IN, BTN2_IN,
 	wire [3:0]    insn_type;
 	wire [3:0]    insn_code;
 	wire [2:0]    insn_stage;
-	wire [7:0]	  r6out;
+	wire [31:0]	  r6out;
 	
 	reg  [31:0]   ir_data;
 	reg  [31:0]   dr_data;
 	reg  [31:0]   a_data;
 	reg  [31:0]   b_data;
 	reg  [31:0]   c_data;
-	wire [31:0] sout;
 	
 	clock C1 (CCLK, 25000, clk0);
 	pbdebounce M1(clk0, BTN2_IN, BTN2);
@@ -156,22 +155,22 @@ module top(input wire CCLK, BTN3_IN, BTN2_IN,
 				if(pc[3:0]>9) strdata[71:64] = 8'h37 + pc[3:0]; 
 				else strdata[71:64] = 8'h30 + pc[3:0];
 				//
-				if (sout[31:28]>9) strdata[63:56] = 8'h37 + sout[31:28];
-				else strdata[63:56] = 8'h30 + sout[31:28];
-				if (sout[27:24]>9) strdata[55:48] = 8'h37 + sout[27:24];
-				else strdata[55:48] = 8'h30 + sout[27:24];
-				if (sout[23:20]>9) strdata[47:40] = 8'h37 + sout[23:20];
-				else strdata[47:40] = 8'h30 + sout[23:20];
-				if (sout[19:16]>9) strdata[39:32] = 8'h37 + sout[19:16];
-				else strdata[39:32] = 8'h30 + sout[19:16];
-				if (sout[15:12]>9) strdata[31:24] = 8'h37 + sout[15:12];
-				else strdata[31:24] = 8'h30 + sout[15:12];
-				if (sout[11:8]>9) strdata[23:16] = 8'h37 + sout[11:8];
-				else strdata[23:16] = 8'h30 + sout[11:8];
-				if (sout[7:4]>9) strdata[15:8] = 8'h37 + sout[7:4];
-				else strdata[15:8] = 8'h30 + sout[7:4];
-				if (sout[3:0]>9) strdata[7:0] = 8'h37 + sout[3:0];
-				else strdata[7:0] = 8'h30 + sout[3:0];
+				if (r6out[31:28]>9) strdata[63:56] = 8'h37 + r6out[31:28];
+				else strdata[63:56] = 8'h30 + r6out[31:28];
+				if (r6out[27:24]>9) strdata[55:48] = 8'h37 + r6out[27:24];
+				else strdata[55:48] = 8'h30 + r6out[27:24];
+				if (r6out[23:20]>9) strdata[47:40] = 8'h37 + r6out[23:20];
+				else strdata[47:40] = 8'h30 + r6out[23:20];
+				if (r6out[19:16]>9) strdata[39:32] = 8'h37 + r6out[19:16];
+				else strdata[39:32] = 8'h30 + r6out[19:16];
+				if (r6out[15:12]>9) strdata[31:24] = 8'h37 + r6out[15:12];
+				else strdata[31:24] = 8'h30 + r6out[15:12];
+				if (r6out[11:8]>9) strdata[23:16] = 8'h37 + r6out[11:8];
+				else strdata[23:16] = 8'h30 + r6out[11:8];
+				if (r6out[7:4]>9) strdata[15:8] = 8'h37 + r6out[7:4];
+				else strdata[15:8] = 8'h30 + r6out[7:4];
+				if (r6out[3:0]>9) strdata[7:0] = 8'h37 + r6out[3:0];
+				else strdata[7:0] = 8'h30 + r6out[3:0];
 				//
 
 				cls = 1;
@@ -201,18 +200,18 @@ module top(input wire CCLK, BTN3_IN, BTN2_IN,
 
 	pcm x_pcm(clk, rst, alu_out, c_data, ir_data, pcsource, write_pc, pc);
 	
-	always @(write_ir) begin
+	always @(write_ir or CCLK) begin
 		if (write_ir)
 			ir_data <= mem_data;
 	end
 	
-	always @(write_dr) begin
+	always @(write_dr or CCLK) begin
 		if (write_dr)
 			dr_data <= mem_data;
 	end
 	
 	reg_wrapper x_reg_wrapper(clk, rst, ir_data, dr_data, c_data, memtoreg, regdst, write_reg,
-										 rdata_A, rdata_B, r6out, sout, SW); 
+										 rdata_A, rdata_B, SW, r6out); 
 
 	always @(write_a) begin
  		if (write_a)
@@ -228,7 +227,7 @@ module top(input wire CCLK, BTN3_IN, BTN2_IN,
 		alu_srcA, alu_srcB, alu_ctrl,
 		zero, alu_out);
 										 
-	always @(write_c) begin
+	always @(write_c or clk) begin
  		if (write_c)
 			c_data <= alu_out;
 	end

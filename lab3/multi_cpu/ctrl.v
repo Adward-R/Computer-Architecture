@@ -101,15 +101,16 @@ module ctrl(clk, rst, ir_data, zero,
 		write_a <= 1'b0;
 		write_b <= 1'b0;
 		write_reg <= 1'b0;
-		iord <= 1'b0;
+		//iord <= 1'b0;
 	end
 	
 	always @ (posedge clk or posedge rst)
 	begin	
 		if (rst == 1)
 		begin
-			iord <= 1'b0;
-			state <=IF; 
+			//iord <= 1'b0;
+			//state <=IF;
+			state <= OTHER;
 			insn_stage <= STAGE_IF;
 			write_pc <= 1'b0;
 			write_mem <= 1'b0;
@@ -181,8 +182,8 @@ module ctrl(clk, rst, ir_data, zero,
 					end
 					default: 
 					begin
-					state <=EX_R;
-					insn_stage <=STAGE_EXE;
+					state <=ID;
+					insn_stage <=STAGE_ID;
 					end
 				endcase
 			end

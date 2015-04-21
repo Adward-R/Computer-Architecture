@@ -19,7 +19,7 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module reg_wrapper(clk, rst, ir_data, dr_data, c_data, memtoreg, regdst, write_reg,
-						rdata_A, rdata_B, r6out, sout, SW);
+						rdata_A, rdata_B, SW ,r6out);
 	input         	clk;
 	input				rst;
 	input	[31:0]  	ir_data;
@@ -31,8 +31,8 @@ module reg_wrapper(clk, rst, ir_data, dr_data, c_data, memtoreg, regdst, write_r
 	input [3:0] 	SW;
 	output [31:0]	rdata_A;
 	output [31:0]	rdata_B;
-	output [7:0]	r6out;
-	output wire [31:0]  sout;
+	output [31:0]	r6out;
+	//output wire [31:0]  sout;
 	
 	wire [4:0]		rs;
 	wire [4:0]		rt;
@@ -56,7 +56,7 @@ module reg_wrapper(clk, rst, ir_data, dr_data, c_data, memtoreg, regdst, write_r
 					  .rdata_A(rdata_A),
 					  .rdata_B(rdata_B),
 					  .r6out(r6out),
-					  .sout(sout),
+					  //.sout(sout),
 					  .SW(SW));
 
 endmodule

@@ -19,7 +19,7 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 //regs module
-module regs(clk, rst, rnum_A, rnum_B, wnum, wdata, we, rdata_A, rdata_B, r6out,sout,SW);
+module regs(clk, rst, rnum_A, rnum_B, wnum, wdata, we, rdata_A, rdata_B, r6out,SW);
     input        clk;
 	input        rst;
 	input [4:0]  rnum_A;
@@ -30,8 +30,8 @@ module regs(clk, rst, rnum_A, rnum_B, wnum, wdata, we, rdata_A, rdata_B, r6out,s
 	input [3:0] SW;
 	output [31:0] rdata_A;
 	output [31:0] rdata_B;
-   output [7:0] r6out;
-	output reg [3:0] sout;
+   output reg [31:0] r6out;
+	//output reg [3:0] sout;
 	wire         clk;
 	wire         rst;
 	wire [4:0]   rnum_A;
@@ -39,7 +39,6 @@ module regs(clk, rst, rnum_A, rnum_B, wnum, wdata, we, rdata_A, rdata_B, r6out,s
 	wire [4:0]   wnum;
 	wire [31:0]  wdata;
 	wire         we;
-   wire [7:0]   r6out;
 	reg [31:0]   rdata_A;
 	reg [31:0]   rdata_B;
 
@@ -59,7 +58,7 @@ module regs(clk, rst, rnum_A, rnum_B, wnum, wdata, we, rdata_A, rdata_B, r6out,s
 	reg [31:0]   r13;
 	reg [31:0]   r14;
 	reg [31:0]   r15;
-   assign  r6out=r6[7:0];
+   //assign  r6out=r6[6:0];
 	always @ (posedge clk or posedge rst)
 	begin
  		if (rst == 1)
@@ -146,23 +145,23 @@ module regs(clk, rst, rnum_A, rnum_B, wnum, wdata, we, rdata_A, rdata_B, r6out,s
 		 endcase
 		 
 		 case(SW)
-		    4'b0000: sout <= r0;
-			 4'b0001: sout <= r1;
-			 4'b0010: sout <= r2;
-			 4'b0011: sout <= r3;
-			 4'b0100: sout <= r4;
-			 4'b0101: sout <= r5;
-			 4'b0110: sout <= r6;
-			 4'b0111: sout <= r7;
-			 4'b1000: sout <= r8;
-			 4'b1001: sout <= r9;
-			 4'b1010: sout <= r10;
-			 4'b1011: sout <= r11;
-			 4'b1100: sout <= r12;
-			 4'b1101: sout <= r13;
-			 4'b1110: sout <= r14;
-			 4'b1111: sout <= r15;
-			 default:  sout <= r0;
+		    4'b0000: r6out <= r0;
+			 4'b0001: r6out <= r1;
+			 4'b0010: r6out <= r2;
+			 4'b0011: r6out <= r3;
+			 4'b0100: r6out <= r4;
+			 4'b0101: r6out <= r5;
+			 4'b0110: r6out <= r6;
+			 4'b0111: r6out <= r7;
+			 4'b1000: r6out <= r8;
+			 4'b1001: r6out <= r9;
+			 4'b1010: r6out <= r10;
+			 4'b1011: r6out <= r11;
+			 4'b1100: r6out <= r12;
+			 4'b1101: r6out <= r13;
+			 4'b1110: r6out <= r14;
+			 4'b1111: r6out <= r15;
+			 default:  r6out <= r0;
 		 endcase
 	  end
 	end
