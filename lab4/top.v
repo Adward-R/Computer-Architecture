@@ -1,12 +1,11 @@
 `timescale 1ns / 1ps
-
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
 // Engineer: 
 // 
-// Create Date:    16:36:51 04/28/2015 
+// Create Date:    19:19:37 05/11/2014 
 // Design Name: 
-// Module Name:    to 
+// Module Name:    top 
 // Project Name: 
 // Target Devices: 
 // Tool versions: 
@@ -19,12 +18,8 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module top(input wire CCLK, BTN3_in, BTN2_in, 
-				input wire [3:0]SW, 
-				output wire LED, LCDE, LCDRS, LCDRW, 
-				output wire [3:0]LCDDAT);
+module top(input wire CCLK, BTN3_in, BTN2_in, input wire [3:0]SW, output wire LED, LCDE, LCDRS, LCDRW, output wire [3:0]LCDDAT);
 
-	wire BTN3, BTN2;
 	wire [31:0] if_npc;
 	wire [31:0] if_pc4;
 	wire [31:0] if_inst;
@@ -100,7 +95,8 @@ module top(input wire CCLK, BTN3_in, BTN2_in,
 	assign LCDRS=rslcd;
 	assign LCDRW=rwlcd;
 	assign LCDE=elcd;
-	
+	anti_jitter aj1(CCLK, BTN2_in, BTN2);
+	anti_jitter aj2(CCLK, BTN3_in, BTN3);
 	assign LED=BTN3;
 	assign which_reg[3:0] = SW[3:0];
 
@@ -110,54 +106,53 @@ module top(input wire CCLK, BTN3_in, BTN2_in,
 		clk_cnt <= 8'b0;
 		cls <= 1'b0;
 	end
-	
-	anti_jitter aj1(clk, BTN3_in, BTN3);
-	anti_jitter aj2(clk, BTN2_in, BTN2);
-	
+
 	display M0 (CCLK, cls, strdata, rslcd, rwlcd, elcd, lcdd);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
 
 	always @(posedge CCLK) begin
 		if ((BTN3 == 1'b1) || (BTN2 == 1'b1)) begin
+				//first line 8 4-bit Instrution
+			if(if_inst[31:28] > 9) strdata[255:248] <= 8'h37 + if_inst[31:28];	else strdata[255:248] <= 8'h30 + if_inst[31:28];
+			if(if_inst[27:24] > 9) strdata[247:240] <= 8'h37 + if_inst[27:24];	else strdata[247:240] <= 8'h30 + if_inst[27:24];
+			if(if_inst[23:20] > 9) strdata[239:232] <= 8'h37 + if_inst[23:20];	else strdata[239:232] <= 8'h30 + if_inst[23:20];
+			if(if_inst[19:16] > 9) strdata[231:224] <= 8'h37 + if_inst[19:16];	else strdata[231:224] <= 8'h30 + if_inst[19:16];
+			if(if_inst[15:12] > 9) strdata[223:216] <= 8'h37 + if_inst[15:12];	else strdata[223:216] <= 8'h30 + if_inst[15:12];
+			if(if_inst[11:8] > 9) strdata[215:208] <= 8'h37 + if_inst[11:8];	else strdata[215:208] <= 8'h30 + if_inst[11:8];
+			if(if_inst[7:4] > 9) strdata[207:200] <= 8'h37 + if_inst[7:4];	else strdata[207:200] <= 8'h30 + if_inst[7:4];
+			if(if_inst[3:0] > 9) strdata[199:192] <= 8'h37 + if_inst[3:0];	else strdata[199:192] <= 8'h30 + if_inst[3:0];
+
 			//first line 8 4-bit Instrution
-			strdata[255:248] <= 8'h30 + if_inst[31:28];
-			strdata[247:240] <= 8'h30 + if_inst[27:24];
-			strdata[239:232] <= 8'h30 + if_inst[23:20];
-			strdata[231:224] <= 8'h30 + if_inst[19:16];
-			strdata[223:216] <= 8'h30 + if_inst[15:12];
-			strdata[215:208] <= 8'h30 + if_inst[11:8];
-			strdata[207:200] <= 8'h30 + if_inst[7:4];
-			strdata[199:192] <= 8'h30 + if_inst[3:0];
 			//space
 			//strdata[191:184] = " ";
 			//2 4-bit CLK
-			strdata[183:176] <= 8'h30 + clk_cnt[7:4];
-			strdata[175:168] <= 8'h30 + clk_cnt[3:0];
+			if(clk_cnt[7:4] > 9) strdata[183:176] <= 8'h37 + clk_cnt[7:4];	else strdata[183:176] <= 8'h30 + clk_cnt[7:4];
+			if(clk_cnt[3:0] > 9) strdata[175:168] <= 8'h37 + clk_cnt[3:0];	else strdata[175:168] <= 8'h30 + clk_cnt[3:0];
 			//space
 			//strdata[167:160] = " ";
 
 			//second line
 			//strdata[127:120] = "f";
-			strdata[119:112] <= 8'h30 + IF_ins_number;
-			strdata[111:104] <= 8'h30 + IF_ins_type;
+			if(IF_ins_number > 9) strdata[119:112] <= 8'h37 + IF_ins_number;	else strdata[119:112] <= 8'h30 + IF_ins_number;
+			if(IF_ins_type > 9) strdata[111:104] <= 8'h37 + IF_ins_type;	else strdata[111:104] <= 8'h30 + IF_ins_type;
 			//strdata[103:96] = "d";
-			strdata[95:88] <= 8'h30 + ID_ins_number;
-			strdata[87:80] <= 8'h30 + ID_ins_type;
+			if(ID_ins_number > 9) strdata[95:88] <= 8'h37 + ID_ins_number;	else strdata[95:88] <= 8'h30 + ID_ins_number;
+			if(ID_ins_type > 9) strdata[87:80] <= 8'h37 + ID_ins_type;	else strdata[87:80] <= 8'h30 + ID_ins_type;
 			//strdata[79:72] = "e";
-			strdata[71:64] <= 8'h30 + EX_ins_number;
-			strdata[63:56] <= 8'h30 + EX_ins_type;
+			if(EX_ins_number > 9) strdata[71:64] <= 8'h37 + EX_ins_number;	else strdata[71:64] <= 8'h30 + EX_ins_number;
+			if(EX_ins_type > 9) strdata[63:56] <= 8'h37 + EX_ins_type;	else strdata[63:56] <= 8'h30 + EX_ins_type;
 			//strdata[55:48] = "m";
-			strdata[47:40] <= 8'h30 + MEM_ins_number;
-			strdata[39:32] <= 8'h30 + MEM_ins_type;
+			if(MEM_ins_number > 9) strdata[47:40] <= 8'h37 + MEM_ins_number;	else strdata[47:40] <= 8'h30 + MEM_ins_number;
+			if(MEM_ins_type > 9) strdata[39:32] <= 8'h37 + MEM_ins_type;	else strdata[39:32] <= 8'h30 + MEM_ins_type;
 			//strdata[31:24] = "w";
-			strdata[23:16] <= 8'h30 + WB_ins_number;
-			strdata[15:8] <= 8'h30 + WB_ins_type;
+			if(WB_ins_number > 9) strdata[23:16] <= 8'h37 + WB_ins_number;	else strdata[23:16] <= 8'h30 + WB_ins_number;
+			if(WB_ins_type > 9) strdata[15:8] <= 8'h37 + WB_ins_type;	else strdata[15:8] <= 8'h30 + WB_ins_type;
 		end
 		if((BTN3 == 1'b1) || (BTN2 == 1'b1)||(SW_old != SW)) begin
 			//first line after CLK and space
-			strdata[159:152] <= 8'h30 + reg_content[15:12];
-			strdata[151:144] <= 8'h30 + reg_content[11:8];
-			strdata[143:136] <= 8'h30 + reg_content[7:4];
-			strdata[135:128] <= 8'h30 + reg_content[3:0];
+			if(reg_content[15:12]>9) strdata[159:152] <= 8'h37 + reg_content[15:12]; else strdata[159:152] <= 8'h30 + reg_content[15:12];
+			if(reg_content[11:8]>9) strdata[151:144] <= 8'h37 + reg_content[11:8]; else strdata[151:144] <= 8'h30 + reg_content[11:8];
+			if(reg_content[7:4]>9) strdata[143:136] <= 8'h37 + reg_content[7:4]; else strdata[143:136] <= 8'h30 + reg_content[7:4];
+			if(reg_content[3:0]>9) strdata[135:128] <= 8'h37 + reg_content[3:0]; else strdata[135:128] <= 8'h30 + reg_content[3:0];
 			SW_old <= SW;
 			cls <= 1;
 		end
@@ -189,4 +184,3 @@ module top(input wire CCLK, BTN3_in, BTN2_in,
 	wb_stage x_wb_stage(BTN3, mem_destR, mem_aluR, mem_mdata, mem_wreg, mem_m2reg, 
 	  wb_wreg, wb_dest, wb_destR, WB_ins_type, WB_ins_number,OUT_ins_type, OUT_ins_number);
 endmodule
-
