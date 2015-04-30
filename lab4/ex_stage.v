@@ -44,10 +44,10 @@ module ex_stage (clk,  id_imm, id_inA, id_inB, id_wreg, id_m2reg, id_wmem, id_al
 
 	assign a_in = eshift ? sa : edata_a;
 	assign b_in = ealuimm ? odata_imm : edata_b;
-	//assign ex_inB = ;
-	//assign ex_pc =;
-	//assign ex_zero =
-	//assign ex_destR = e_regrt? : ; 
+	assign ex_inB = edata_b; //~~
+	assign ex_pc =epc4 + odata_imm; //~~
+	assign ex_zero =(ex_aluR==32'h0); //~~
+	assign ex_destR = e_regrt? e_rt: e_rd; //~~ 
 	
 	Reg_ID_EXE	x_Reg_ID_EXE(clk, id_wreg,id_m2reg,id_wmem,id_aluc,id_shift,id_aluimm, id_inA,id_inB,id_imm,id_branch,id_pc4,id_regrt,id_rt,id_rd,
 					ex_wreg,ex_m2reg,	ex_wmem,ealuc,	eshift, ealuimm, edata_a,edata_b, odata_imm, ex_branch, epc4,e_regrt,e_rt,e_rd,

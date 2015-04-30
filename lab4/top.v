@@ -111,8 +111,8 @@ module top(input wire CCLK, BTN3_in, BTN2_in,
 		cls <= 1'b0;
 	end
 	
-	anti_jitter(clk, BTN3_in, BTN3);
-	anti_jitter(clk, BTN2_in, BTN2);
+	anti_jitter aj1(clk, BTN3_in, BTN3);
+	anti_jitter aj2(clk, BTN2_in, BTN2);
 	
 	display M0 (CCLK, cls, strdata, rslcd, rwlcd, elcd, lcdd);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
 

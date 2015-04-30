@@ -70,15 +70,15 @@ module ctrl_unit(clk, rst, if_instr, instr,
 	assign mem_op[5:0] = mem_instr[31:26];
 	assign wb_op[5:0] = wb_instr[31:26];
 	
-//	assign cu_branch =; //if instr type == BEQ then 1 else 0
-//	assign cu_regrt =; //if instr type = R type then 0 else 1;
-//	assign cu_sext = //when need to sign extend?
+	assign cu_branch = (opcode==`OP_BEQ) ? 1 : 0; //~~if instr type == BEQ then 1 else 0
+	assign cu_regrt = (opcode==`OP_ALUOp) ? 0 : 1; //~~if instr type = R type then 0 else 1;
+	assign cu_sext = (opcode==`OP_ALUOp) ? 0 : 1; //~~when need to sign extend?
 	
-//	assign cu_wreg = //when need to write reg?
-//	assign cu_m2reg = //when need to write mem to reg ?
-//	assign cu_wmem = //when need to enable write mem?
+	assign cu_wreg = (opcode==`OP_ALUOp || opcode == `OP_LW) ? 1 : 0;//~~when need to write reg?
+	assign cu_m2reg = (opcode == `OP_LW) ? 1 : 0;//~~when need to write mem to reg ?
+	assign cu_wmem = (opcode == `OP_SW) ? 1 : 0;//~~when need to enable write mem?
 	assign cu_shift = ((opcode == `OP_ALUOp) && (func[5:2] == 4'b0))? 1 : 0;
-//	assign cu_aluimm =;
+	assign cu_aluimm = (opcode == `OP_ALUOp || opcode == `OP_BEQ) ? 0 : 1; //~~
 	
 	always @ (posedge clk or posedge rst)
 		if(rst == 1)

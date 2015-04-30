@@ -59,7 +59,7 @@ module id_stage (clk, rst, if_inst, if_pc4, wb_destR, wb_dest,wb_wreg,
 	assign rt= reg_inst[20:16];
 	assign rd = reg_inst[15:11];
 	assign id_imm = cu_sext?( imm[15]?{16'b1,imm}:{16'b0,imm}):{16'b0,imm};
-	assign id_pc4 = if_pc4; //~~
+	assign id_pc4 = pc4; //~~
 	
 	always @ (posedge clk or posedge rst)
 		if (rst==1)
@@ -69,7 +69,7 @@ module id_stage (clk, rst, if_inst, if_pc4, wb_destR, wb_dest,wb_wreg,
 		else
 		begin
 			reg_inst <= if_inst;
-			pc4 <= id_pc4; //~~
+			pc4 <= if_pc4; //~~
 			
 			ID_ins_type <= IF_ins_type;
 			ID_ins_number <= IF_ins_number;			

@@ -35,7 +35,7 @@ module if_stage (clk, rst, npc, nid_pc, ctrl_branch,
 		ID_ins_number[3:0] = 4'b0000;
 	end
 
-	assign if_pc4 = pc + 4; //~~
+	assign if_pc4 = pc + 1; //~~
 	assign if_pc = ctrl_branch ? nid_pc : if_pc4; //~~
 	assign IF_ins_number[3:0] = npc[3:0] ;
 	assign IF_ins_type[3:0] = `INST_TYPE_NONE;
@@ -120,6 +120,7 @@ module if_stage (clk, rst, npc, nid_pc, ctrl_branch,
 		end
 	end
 
-	instr_mem x_inst_mem(.addr(pc[7:0]),.clk(~clk),.dout(inst_m));
+	instr_mem x_inst_mem(.addra(pc[7:0]),.clka(~clk),.douta(inst_m));
+	//instr_mem x_inst_mem(.addra(pc[7:0]),.wea(0),.dina(0),.clka(~clk),.douta(inst_m));
 endmodule
 
