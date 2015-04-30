@@ -4,7 +4,7 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date:    19:27:31 03/30/2014 
+// Create Date:    19:47:51 05/11/2014 
 // Design Name: 
 // Module Name:    alu 
 // Project Name: 
@@ -25,44 +25,47 @@ module alu(i_r,i_s,i_aluc,o_alu);
 	input [3:0] i_aluc;		//i_aluc: ctrl input
 	output [31:0] o_alu;		//o_alu: alu result output
 	reg [31:0] o_alu;
+	reg [63:0] tem;
 	
 	always @(i_aluc or i_r or i_s) begin
 		case (i_aluc)
 			`ALU_ADD:begin
 				o_alu=i_r+i_s;
-			end
+				end
 			`ALU_SUB:begin
 				o_alu=i_r-i_s;
-			end
+				end
 			`ALU_AND:begin
 				o_alu=i_r&i_s;
-			end
+				end
 			`ALU_OR:begin
 				o_alu=i_r|i_s;
-			end
-			`ALU_NOR:begin
+				end
+			`ALU_XOR:begin
 				o_alu=~(i_r|i_s);
-			end
-			/*
+				end
 			`ALU_SLT:begin
-				o_alu=i_r+i_s;
-			end
-			
+				if (i_r < i_s)
+					o_alu=1;
+				else 
+					o_alu=0;
+				end
 			`ALU_SLL:begin
-				o_alu=i_r+i_s;
-			end
+				o_alu=i_r<<i_s;
+				end
 			`ALU_SRL:begin
-				o_alu=i_r+i_s;
-			end
+				o_alu=i_r>>i_s;
+				end
 			`ALU_SRA:begin
-				o_alu=i_r+i_s;
-			end
+				tem=i_r[31]?{{32'hFFFFFFFF},i_r}:{32'h0,i_r};
+				tem=(tem<<i_s);
+				o_alu=tem[31:0];
+				end
 			`ALU_NONE:begin
-				o_alu=i_r+i_s;
-			end*/
+				end
 			default:begin
 				o_alu=i_r+i_s;
-			end
+				end
 		endcase
 	end
 endmodule

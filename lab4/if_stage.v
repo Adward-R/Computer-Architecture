@@ -120,7 +120,7 @@ module if_stage (clk, rst, npc, nid_pc, ctrl_branch,
 		end
 	end
 
-	instr_mem x_inst_mem(.addra(pc[7:0]),.clka(~clk),.douta(inst_m));
-	//instr_mem x_inst_mem(.addra(pc[7:0]),.wea(0),.dina(0),.clka(~clk),.douta(inst_m));
+	//instr_mem x_inst_mem(.addra(pc[7:0]),.clka(~clk),.douta(inst_m));
+	instr_mem x_inst_mem(.addra(pc[7:0]),.wea(0),.dina(0),.clka(~clk),.douta(inst_m));
 endmodule
 
