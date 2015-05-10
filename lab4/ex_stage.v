@@ -1,3 +1,23 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date:    19:28:52 05/11/2014 
+// Design Name: 
+// Module Name:    ex_stage 
+// Project Name: 
+// Target Devices: 
+// Tool versions: 
+// Description: 
+//
+// Dependencies: 
+//
+// Revision: 
+// Revision 0.01 - File Created
+// Additional Comments: 
+//
+//////////////////////////////////////////////////////////////////////////////////
 module ex_stage (clk,  id_imm, id_inA, id_inB, id_wreg, id_m2reg, id_wmem, id_aluc, id_aluimm,id_shift, id_branch, id_pc4,id_regrt,id_rt,id_rd,
 	ex_wreg, ex_m2reg, ex_wmem, ex_aluR, ex_inB, ex_destR, ex_branch, ex_pc, ex_zero, 
 	ID_ins_type, ID_ins_number, EXE_ins_type, EXE_ins_number);
@@ -44,15 +64,15 @@ module ex_stage (clk,  id_imm, id_inA, id_inB, id_wreg, id_m2reg, id_wmem, id_al
 
 	assign a_in = eshift ? sa : edata_a;
 	assign b_in = ealuimm ? odata_imm : edata_b;
-	assign ex_inB = edata_b; //~~
-	assign ex_pc =epc4 + odata_imm; //~~
-	assign ex_zero =(ex_aluR==32'h0); //~~
-	assign ex_destR = e_regrt? e_rt: e_rd; //~~ 
+	assign ex_inB = edata_b;
+	assign ex_pc =epc4 + odata_imm;
+	assign ex_zero =(ex_aluR==32'h0);
+	assign ex_destR = e_regrt? e_rt: e_rd; 
 	
 	Reg_ID_EXE	x_Reg_ID_EXE(clk, id_wreg,id_m2reg,id_wmem,id_aluc,id_shift,id_aluimm, id_inA,id_inB,id_imm,id_branch,id_pc4,id_regrt,id_rt,id_rd,
 					ex_wreg,ex_m2reg,	ex_wmem,ealuc,	eshift, ealuimm, edata_a,edata_b, odata_imm, ex_branch, epc4,e_regrt,e_rt,e_rd,
 					ID_ins_type, ID_ins_number, EXE_ins_type, EXE_ins_number);
 	imm2sa x_imm2sa(odata_imm,sa);		
-	alu x_alu(a_in,b_in,ealuc,ex_aluR);
+	alu x_Alu(a_in,b_in,ealuc,ex_aluR);
 	
 endmodule

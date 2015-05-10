@@ -1,6 +1,23 @@
-// Spartan-3E Starter Board
-// Liquid Crystal Display lcd.v
-
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date:    19:33:38 05/11/2014 
+// Design Name: 
+// Module Name:    lcd 
+// Project Name: 
+// Target Devices: 
+// Tool versions: 
+// Description: 
+//
+// Dependencies: 
+//
+// Revision: 
+// Revision 0.01 - File Created
+// Additional Comments: 
+//
+//////////////////////////////////////////////////////////////////////////////////
 module lcd(input CCLK, resetlcd, clearlcd, homelcd,
 				datalcd, addrlcd, output reg lcdreset,
 				output reg lcdclear, output reg lcdhome,

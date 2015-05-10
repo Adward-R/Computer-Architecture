@@ -1,4 +1,23 @@
-//Register File
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date:    19:26:58 05/11/2014 
+// Design Name: 
+// Module Name:    regfile 
+// Project Name: 
+// Target Devices: 
+// Tool versions: 
+// Description: 
+//
+// Dependencies: 
+//
+// Revision: 
+// Revision 0.01 - File Created
+// Additional Comments: 
+//
+//////////////////////////////////////////////////////////////////////////////////
 module regfile(clk, rst, raddr_A, raddr_B, waddr, wdata, we, rdata_A, rdata_B,
 	which_reg, reg_content);           
 	input clk;
@@ -149,4 +168,4 @@ module regfile(clk, rst, raddr_A, raddr_B, waddr, wdata, we, rdata_A, rdata_B,
 				default:  reg_content <= r0;
 			endcase
 		end
-	endmodule  
+	endmodule    

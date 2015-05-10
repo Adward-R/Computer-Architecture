@@ -1,3 +1,23 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date:    19:29:17 05/11/2014 
+// Design Name: 
+// Module Name:    Reg_ID_EXE 
+// Project Name: 
+// Target Devices: 
+// Tool versions: 
+// Description: 
+//
+// Dependencies: 
+//
+// Revision: 
+// Revision 0.01 - File Created
+// Additional Comments: 
+//
+//////////////////////////////////////////////////////////////////////////////////
 module Reg_ID_EXE(clk, 	wreg,	m2reg, wmem, aluc, shift, aluimm,  data_a, data_b, data_imm, id_branch,id_pc4, id_regrt,id_rt,id_rd,//inputs
 								ewreg,em2reg,	ewmem,ealuc, eshift, ealuimm, odata_a,odata_b, odata_imm, e_branch, e_pc4,e_regrt,e_rt,e_rd,
 								ID_ins_type, ID_ins_number, EXE_ins_type, EXE_ins_number);	//outputs

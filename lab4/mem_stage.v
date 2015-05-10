@@ -1,3 +1,23 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date:    19:30:06 05/11/2014 
+// Design Name: 
+// Module Name:    mem_stage 
+// Project Name: 
+// Target Devices: 
+// Tool versions: 
+// Description: 
+//
+// Dependencies: 
+//
+// Revision: 
+// Revision 0.01 - File Created
+// Additional Comments: 
+//
+//////////////////////////////////////////////////////////////////////////////////
 module mem_stage (clk, ex_destR, ex_inB, ex_aluR, ex_wreg, ex_m2reg, ex_wmem, ex_branch, ex_pc, ex_zero,
   mem_wreg, mem_m2reg, mem_mdata,	mem_aluR, mem_destR, mem_branch, mem_pc,
   EXE_ins_type, EXE_ins_number, MEM_ins_type, MEM_ins_number);
@@ -32,11 +52,10 @@ module mem_stage (clk, ex_destR, ex_inB, ex_aluR, ex_wreg, ex_m2reg, ex_wmem, ex
 	wire [31:0] data_in;
 	wire mem_branch;
 	
-	assign mem_branch = zero & branch; //~~!
+	assign mem_branch = zero & branch;//!
 	Reg_EXE_MEM x_Reg_EXE_MEM(clk,ex_wreg,ex_m2reg,ex_wmem,ex_aluR,ex_inB,ex_destR,ex_branch,ex_pc,ex_zero,  //inputs
 							mem_wreg, mem_m2reg, mwmem, mem_aluR, data_in, mem_destR, branch, mem_pc, zero,
 							EXE_ins_type, EXE_ins_number, MEM_ins_type, MEM_ins_number);
-	//data_mem x_data_mem(mem_aluR[7:0],~clk,data_in,mem_mdata,mwmem);
 	data_mem x_data_mem(.addra(mem_aluR[7:0]),.clka(~clk),.dina(data_in),.douta(mem_mdata),.wea(mwmem));
 	
 endmodule

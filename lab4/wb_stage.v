@@ -1,3 +1,23 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date:    19:30:55 05/11/2014 
+// Design Name: 
+// Module Name:    wb_stage 
+// Project Name: 
+// Target Devices: 
+// Tool versions: 
+// Description: 
+//
+// Dependencies: 
+//
+// Revision: 
+// Revision 0.01 - File Created
+// Additional Comments: 
+//
+//////////////////////////////////////////////////////////////////////////////////
 module wb_stage(clk,  mem_destR, mem_aluR, mem_mdata, mem_wreg, mem_m2reg, wb_wreg, 
 				wb_dest, wb_destR, MEM_ins_type, MEM_ins_number, WB_ins_type, WB_ins_number);
 	input clk;
@@ -24,4 +44,6 @@ module wb_stage(clk,  mem_destR, mem_aluR, mem_mdata, mem_wreg, mem_m2reg, wb_wr
 	Reg_MEM_WB x_Reg_MEM_WB(clk,	mem_wreg,mem_m2reg,mem_mdata,mem_aluR,mem_destR,	//inputs
 											wb_wreg,wm2reg,wdata_out,waluout,wb_destR,		 //outputs
 											MEM_ins_type, MEM_ins_number, WB_ins_type, WB_ins_number);	
+	
+
 endmodule

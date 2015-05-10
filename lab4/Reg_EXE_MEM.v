@@ -3,7 +3,7 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date:    12:35:13 04/30/2015 
+// Create Date:    19:30:29 05/11/2014 
 // Design Name: 
 // Module Name:    Reg_EXE_MEM 
 // Project Name: 
@@ -49,7 +49,6 @@ module Reg_EXE_MEM(clk,	ewreg,em2reg,ewmem,aluout,edata_b,erdrt, ebranch,epc,eze
 	reg mzero;
 	reg [31:0] mpc;
 	
-	//~~
 	always@(posedge clk) begin
 		mwreg<=ewreg;
 		mm2reg<=em2reg;
@@ -63,5 +62,4 @@ module Reg_EXE_MEM(clk,	ewreg,em2reg,ewmem,aluout,edata_b,erdrt, ebranch,epc,eze
 		mzero<=ezero;
 		mdata_b<=edata_b;
 	end
-	//~~
 endmodule

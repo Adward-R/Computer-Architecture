@@ -1,3 +1,4 @@
+//macro.vh
 //macro definitions
 
 //operation code
@@ -52,3 +53,4 @@
 `define	INST_TYPE_SRL	4'b1101
 `define	INST_TYPE_SRA	4'b1110
 `define	INST_TYPE_NONE	4'b1111
+

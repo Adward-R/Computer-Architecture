@@ -22,7 +22,7 @@
 *     devices, or systems.  Use in such applications are expressly             *
 *     prohibited.                                                              *
 *                                                                              *
-*     (c) Copyright 1995-2015 Xilinx, Inc.                                     *
+*     (c) Copyright 1995-2014 Xilinx, Inc.                                     *
 *     All rights reserved.                                                     *
 *******************************************************************************/
 // You must compile the wrapper file data_mem.v when simulating
@@ -46,15 +46,15 @@ module data_mem(
 
 input clka;
 input [0 : 0] wea;
-input [4 : 0] addra;
+input [8 : 0] addra;
 input [31 : 0] dina;
 output [31 : 0] douta;
 
 // synthesis translate_off
 
-  BLK_MEM_GEN_V7_3 #(
-    .C_ADDRA_WIDTH(5),
-    .C_ADDRB_WIDTH(5),
+  BLK_MEM_GEN_V6_3 #(
+    .C_ADDRA_WIDTH(9),
+    .C_ADDRB_WIDTH(9),
     .C_ALGORITHM(1),
     .C_AXI_ID_WIDTH(4),
     .C_AXI_SLAVE_TYPE(0),
@@ -80,7 +80,6 @@ output [31 : 0] douta;
     .C_HAS_RSTB(0),
     .C_HAS_SOFTECC_INPUT_REGS_A(0),
     .C_HAS_SOFTECC_OUTPUT_REGS_B(0),
-    .C_INIT_FILE("BlankString"),
     .C_INIT_FILE_NAME("data_mem.mif"),
     .C_INITA_VAL("0"),
     .C_INITB_VAL("0"),
@@ -89,8 +88,8 @@ output [31 : 0] douta;
     .C_MEM_TYPE(0),
     .C_MUX_PIPELINE_STAGES(0),
     .C_PRIM_TYPE(1),
-    .C_READ_DEPTH_A(32),
-    .C_READ_DEPTH_B(32),
+    .C_READ_DEPTH_A(512),
+    .C_READ_DEPTH_B(512),
     .C_READ_WIDTH_A(32),
     .C_READ_WIDTH_B(32),
     .C_RST_PRIORITY_A("CE"),
@@ -99,16 +98,15 @@ output [31 : 0] douta;
     .C_RSTRAM_A(0),
     .C_RSTRAM_B(0),
     .C_SIM_COLLISION_CHECK("ALL"),
-    .C_USE_BRAM_BLOCK(0),
     .C_USE_BYTE_WEA(0),
     .C_USE_BYTE_WEB(0),
-    .C_USE_DEFAULT_DATA(1),
+    .C_USE_DEFAULT_DATA(0),
     .C_USE_ECC(0),
     .C_USE_SOFTECC(0),
     .C_WEA_WIDTH(1),
     .C_WEB_WIDTH(1),
-    .C_WRITE_DEPTH_A(32),
-    .C_WRITE_DEPTH_B(32),
+    .C_WRITE_DEPTH_A(512),
+    .C_WRITE_DEPTH_B(512),
     .C_WRITE_MODE_A("WRITE_FIRST"),
     .C_WRITE_MODE_B("WRITE_FIRST"),
     .C_WRITE_WIDTH_A(32),

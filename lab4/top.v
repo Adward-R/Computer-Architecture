@@ -18,7 +18,7 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module top(input wire CCLK, BTN3_in, BTN2_in, input wire [3:0]SW, output wire LED, LCDE, LCDRS, LCDRW, output wire [3:0]LCDDAT);
+module top(input wire CCLK, BTN3_IN, BTN2_IN, input wire [3:0]SW, output wire LED, LCDE, LCDRS, LCDRW, output wire [3:0]LCDDAT);
 
 	wire [31:0] if_npc;
 	wire [31:0] if_pc4;
@@ -95,8 +95,8 @@ module top(input wire CCLK, BTN3_in, BTN2_in, input wire [3:0]SW, output wire LE
 	assign LCDRS=rslcd;
 	assign LCDRW=rwlcd;
 	assign LCDE=elcd;
-	anti_jitter aj1(CCLK, BTN2_in, BTN2);
-	anti_jitter aj2(CCLK, BTN3_in, BTN3);
+	pbdebounce M1(CCLK, BTN2_IN, BTN2);
+	pbdebounce M2(CCLK, BTN3_IN, BTN3);
 	assign LED=BTN3;
 	assign which_reg[3:0] = SW[3:0];
 
@@ -183,4 +183,41 @@ module top(input wire CCLK, BTN3_in, BTN2_in, input wire [3:0]SW, output wire LE
 
 	wb_stage x_wb_stage(BTN3, mem_destR, mem_aluR, mem_mdata, mem_wreg, mem_m2reg, 
 	  wb_wreg, wb_dest, wb_destR, WB_ins_type, WB_ins_number,OUT_ins_type, OUT_ins_number);
+endmodule
+
+module pbdebounce(
+	input wire clk,
+	input wire button,
+	output reg pbreg);
+	
+	reg [7:0] pbshift;
+	wire clk_1ms;
+	timer_1ms m0(clk, clk_1ms);
+	always@(posedge clk_1ms) begin
+		pbshift=pbshift<<1;//左移1位
+		pbshift[0]=button;
+		if (pbshift==0)
+			pbreg=0;
+		if (pbshift==8'hFF)// pbshift八位全为1
+			pbreg=1;
+	end
+endmodule
+
+module timer_1ms
+	(input wire clk,
+	output reg clk_1ms);
+	
+	reg [31:0] cnt;
+	initial begin
+	cnt [31:0] <=0;
+	clk_1ms <= 0;
+	end
+	always@(posedge clk)
+	if(cnt>=5000) begin
+	cnt<=0;
+	clk_1ms <= ~clk_1ms;
+	end
+	else begin
+	cnt<=cnt+1;
+	end
 endmodule

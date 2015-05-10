@@ -1,3 +1,23 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date:    19:31:18 05/11/2014 
+// Design Name: 
+// Module Name:    Reg_MEM_WB 
+// Project Name: 
+// Target Devices: 
+// Tool versions: 
+// Description: 
+//
+// Dependencies: 
+//
+// Revision: 
+// Revision 0.01 - File Created
+// Additional Comments: 
+//
+//////////////////////////////////////////////////////////////////////////////////
 module Reg_MEM_WB(clk,	mwreg,mm2reg,data_out,maluout,mrdrt,	//inputs
 								wwreg,wm2reg,wdata_out,waluout,wrdrt, //outputs
 								MEM_ins_type, MEM_ins_number, WB_ins_type, WB_ins_number);	

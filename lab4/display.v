@@ -3,7 +3,7 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date:    19:41:45 02/21/2012 
+// Create Date:    19:32:52 05/11/2014 
 // Design Name: 
 // Module Name:    display 
 // Project Name: 
@@ -151,4 +151,5 @@ always@(posedge CCLK)
 	end
 
 endmodule
+
 

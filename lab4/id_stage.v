@@ -1,4 +1,23 @@
 `timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date:    19:26:27 05/11/2014 
+// Design Name: 
+// Module Name:    id_stage 
+// Project Name: 
+// Target Devices: 
+// Tool versions: 
+// Description: 
+//
+// Dependencies: 
+//
+// Revision: 
+// Revision 0.01 - File Created
+// Additional Comments: 
+//
+//////////////////////////////////////////////////////////////////////////////////
 module id_stage (clk, rst, if_inst, if_pc4, wb_destR, wb_dest,wb_wreg, 
 	cu_wreg, cu_m2reg, cu_wmem, cu_aluc, cu_shift, cu_aluimm, cu_branch, id_pc4, id_inA, id_inB, id_imm, cu_regrt, rt, rd, 
 	IF_ins_type, IF_ins_number, ID_ins_type, ID_ins_number, which_reg, reg_content);
@@ -59,17 +78,16 @@ module id_stage (clk, rst, if_inst, if_pc4, wb_destR, wb_dest,wb_wreg,
 	assign rt= reg_inst[20:16];
 	assign rd = reg_inst[15:11];
 	assign id_imm = cu_sext?( imm[15]?{16'b1,imm}:{16'b0,imm}):{16'b0,imm};
-	assign id_pc4 = pc4; //~~
+	assign id_pc4 =pc4;
 	
 	always @ (posedge clk or posedge rst)
 		if (rst==1)
 		begin
-		//
 		end
 		else
 		begin
 			reg_inst <= if_inst;
-			pc4 <= if_pc4; //~~
+			pc4 <=if_pc4;
 			
 			ID_ins_type <= IF_ins_type;
 			ID_ins_number <= IF_ins_number;			
@@ -81,5 +99,5 @@ module id_stage (clk, rst, if_inst, if_pc4, wb_destR, wb_dest,wb_wreg,
 		cu_branch, cu_wreg, cu_m2reg, cu_wmem, cu_aluc, cu_shift, cu_aluimm, cu_sext,cu_regrt);
 	
 	assign id_inA=rdata_A;
-	assign id_inB=rdata_B; //~~
+	assign id_inB=rdata_B;
 endmodule
