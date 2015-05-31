@@ -24,7 +24,8 @@ module id_stage (clk, rst, if_inst, if_pc4, wb_destR, wb_dest,wb_wreg,
 	cu_wreg, cu_m2reg, cu_wmem, cu_aluc, cu_shift, cu_aluimm, cu_branch, id_pc4, id_inA, id_inB, 
 id_imm, cu_regrt, rt, rd, 
 	IF_ins_type, IF_ins_number, ID_ins_type, ID_ins_number, which_reg, reg_content, id_wpcir,id_FWA,id_FWB);
-	
+//id_FWA, id_FWB: newly added ports	
+
 	input clk;
 	input rst;
 	input [31:0] if_inst;        //the instruction

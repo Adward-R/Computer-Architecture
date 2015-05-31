@@ -1,6 +1,7 @@
 `include "macro.vh"	
 module ctrl_unit(clk, rst, if_instr, instr, 
 	cu_branch, cu_wreg, cu_m2reg, cu_wmem, cu_aluc, cu_shift, cu_aluimm, cu_sext,cu_regrt, cu_wpcir,cu_fwda, cu_fwdb);
+// cu_fwda, cu_fwdb: newly added ports
 	
 	input clk;
 	input rst;

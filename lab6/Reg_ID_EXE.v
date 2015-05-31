@@ -21,6 +21,9 @@
 module Reg_ID_EXE(clk,rst,wreg,	m2reg, wmem, aluc, shift, aluimm,  data_a, data_b, data_imm, id_branch,id_pc4, id_regrt,id_rt,id_rd,//inputs
 	ewreg,em2reg,	ewmem,ealuc, eshift, ealuimm, odata_a,odata_b, odata_imm, e_branch, e_pc4,e_regrt,e_rt,e_rd,
 	ID_ins_type, ID_ins_number, EXE_ins_type, EXE_ins_number, id_FWA, id_FWB, eid_FWA, eid_FWB);	//outputs
+//id_FWA, id_FWB: newly added in ports
+//eid_fwa, eid_fwb: newly added out ports
+
 	input		clk;
 	input		rst;
 	input 	wreg,	m2reg,	wmem,	shift,	aluimm;

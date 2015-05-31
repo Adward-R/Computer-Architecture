@@ -24,6 +24,7 @@
 module ex_stage (clk, rst, id_imm, id_inA, id_inB, id_wreg, id_m2reg, id_wmem, id_aluc, id_aluimm,id_shift, id_branch, id_pc4,id_regrt,id_rt,id_rd,
 	id_FWA,id_FWB,mem_aluR, wb_dest,ex_wreg, ex_m2reg, ex_wmem, ex_aluR, ex_inB, ex_destR, ex_branch, ex_pc, ex_zero, 
 	ID_ins_type, ID_ins_number, EXE_ins_type, EXE_ins_number);
+//id_FWA, id_FWB, mem_aluR, wb_dest: newly added ports
 	input clk;
 	input rst;
 	input[31:0] id_imm;
