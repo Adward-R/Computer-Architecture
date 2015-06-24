@@ -74,14 +74,9 @@ module ex_stage (clk, rst, id_imm, id_inA, id_inB, id_wreg, id_m2reg, id_wmem, i
 	wire [4:0]e_rd;
 	wire [1:0] eid_FWA;
 	wire [1:0] eid_FWB;
-	//assign a_in = eshift ? sa : ((id_FWA == 2'b01) ? ex_aluR : ((id_FWA == 2'b10) ? mem_aluR : edata_a));
-	//assign b_in = ealuimm ? odata_imm : ((id_FWB == 2'b01) ? ex_aluR : ((id_FWB == 2'b10) ? mem_aluR : edata_b));
+
 	assign a_in = ((eid_FWA == 2'b01) ? mem_aluR : ((eid_FWA == 2'b10) ? wb_dest : edata_a));
 	assign b_in = ealuimm ? odata_imm : ((eid_FWB == 2'b01) ? mem_aluR : ((eid_FWB == 2'b10) ? wb_dest : edata_b));
-	//assign a_in = eshift ? sa :  edata_a;
-	//assign b_in = ealuimm ? odata_imm :  edata_b;
-	//assign ex_inB = edata_b;//!
-	//assign ex_inB = (eid_FWB == 2'b01) ? mem_aluR : ((eid_FWB == 2'b10) ? wb_dest : edata_b);
 	assign ex_inB = (eid_FWB == 2'b01) ? mem_aluR : ((eid_FWB == 2'b10) ?wb_dest : edata_b);
 	assign ex_pc = epc4 + odata_imm;//!
 	assign ex_zero = (ex_aluR==32'h0);//!
