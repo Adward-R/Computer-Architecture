@@ -3,7 +3,7 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date:    20:58:06 03/18/2014 
+// Create Date:    20:12:04 03/18/2014 
 // Design Name: 
 // Module Name:    ex_stage 
 // Project Name: 
@@ -18,13 +18,10 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-
 //ex_stage
-
 module ex_stage (clk, rst, id_imm, id_inA, id_inB, id_wreg, id_m2reg, id_wmem, id_aluc, id_aluimm,id_shift, id_branch, id_pc4,id_regrt,id_rt,id_rd,
-	id_FWA,id_FWB,mem_aluR, wb_dest,ex_wreg, ex_m2reg, ex_wmem, ex_aluR, ex_inB, ex_destR, ex_branch, ex_pc, ex_zero, 
-	ID_ins_type, ID_ins_number, EXE_ins_type, EXE_ins_number);
-//id_FWA, id_FWB, mem_aluR, wb_dest: newly added ports
+	ex_wreg, ex_m2reg, ex_wmem, ex_aluR, ex_inB, ex_destR, ex_branch, ex_pc, ex_zero, 
+	ID_ins_type, ID_ins_number, EXE_ins_type, EXE_ins_number,id_FWA, id_FWB,mem_aluR, wb_dest,id_destR);
 	input clk;
 	input rst;
 	input[31:0] id_imm;
@@ -42,17 +39,20 @@ module ex_stage (clk, rst, id_imm, id_inA, id_inB, id_wreg, id_m2reg, id_wmem, i
 	
 	input[3:0] ID_ins_type;
 	input[3:0] ID_ins_number;
-	///////
-	input [1:0] id_FWA;
-	input [1:0] id_FWB;
-	input [31:0] mem_aluR;
-	input [31:0] wb_dest;
-
 	output[3:0] EXE_ins_type;
 	output[3:0] EXE_ins_number;
 	
 	input[31:0] id_pc4;
 	input id_branch;
+	
+	
+	input [1:0] id_FWA;
+	input [1:0] id_FWB;
+	input [31:0] mem_aluR;
+	input [31:0] wb_dest;
+	input wire [4:0] id_destR;
+	
+	
 	output ex_branch;
 	output ex_zero;
 	output ex_wreg;
@@ -62,7 +62,6 @@ module ex_stage (clk, rst, id_imm, id_inA, id_inB, id_wreg, id_m2reg, id_wmem, i
 	output[31:0] ex_inB;
 	output[31:0] ex_pc;
 	output[4:0] ex_destR;
-	
 	wire [3:0] ealuc;
 	wire ealuimm,eshift;
 	wire [31:0] sa;
@@ -74,17 +73,16 @@ module ex_stage (clk, rst, id_imm, id_inA, id_inB, id_wreg, id_m2reg, id_wmem, i
 	wire [4:0]e_rd;
 	wire [1:0] eid_FWA;
 	wire [1:0] eid_FWB;
-
-	assign a_in = ((eid_FWA == 2'b01) ? mem_aluR : ((eid_FWA == 2'b10) ? wb_dest : edata_a));
-	assign b_in = ealuimm ? odata_imm : ((eid_FWB == 2'b01) ? mem_aluR : ((eid_FWB == 2'b10) ? wb_dest : edata_b));
-	assign ex_inB = (eid_FWB == 2'b01) ? mem_aluR : ((eid_FWB == 2'b10) ?wb_dest : edata_b);
+	
+	assign a_in = eshift ? sa : edata_a;
+	assign b_in = ealuimm ? odata_imm : edata_b;
+	assign ex_inB = edata_b;//!
 	assign ex_pc = epc4 + odata_imm;//!
 	assign ex_zero = (ex_aluR==32'h0);//!
-	assign ex_destR = e_regrt? e_rt: e_rd; //!
 	
 	Reg_ID_EXE	x_Reg_ID_EXE(clk, rst, id_wreg,id_m2reg,id_wmem,id_aluc,id_shift,id_aluimm, id_inA,id_inB,id_imm,id_branch,id_pc4,id_regrt,id_rt,id_rd,
 		ex_wreg,ex_m2reg,	ex_wmem,ealuc,	eshift, ealuimm, edata_a,edata_b, odata_imm, ex_branch, epc4,e_regrt,e_rt,e_rd,
-		ID_ins_type, ID_ins_number, EXE_ins_type, EXE_ins_number, id_FWA, id_FWB, eid_FWA, eid_FWB);
+		ID_ins_type, ID_ins_number, EXE_ins_type, EXE_ins_number,id_FWA,id_FWB,mem_aluR,wb_dest,eid_FWA,eid_FWB,id_destR,ex_destR);
 	imm2sa x_imm2sa(odata_imm,sa);
 	alu x_Alu(a_in,b_in,ealuc,ex_aluR);
 	
